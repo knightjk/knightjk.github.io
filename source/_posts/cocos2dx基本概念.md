@@ -1,0 +1,1 @@
+---title: cocos2d基础概念---## 导演，场景，层和精灵 ![cocos基本角色](https://i.imgur.com/FKbj5mD.png)### 导演### 场景### 层### 精灵## 调度器
