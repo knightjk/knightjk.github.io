@@ -79,7 +79,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/11/18/cocos2dx基本概念/" title="cocos2d基础概念" itemprop="url">cocos2d基础概念</a>
+      <a href="/2018/11/18/cocos2dx基本概念/" title="cocos2dx基础概念" itemprop="url">cocos2dx基础概念</a>
   </h1>
   <p class="article-author">By
        
@@ -92,8 +92,86 @@
 </header>
     <div class="article-content">
         
-        <h2 id="导演，场景，层和精灵"><a href="#导演，场景，层和精灵" class="headerlink" title="导演，场景，层和精灵"></a>导演，场景，层和精灵</h2><p> <img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true" alt="cocos基本角色"></p>
-<h3 id="导演"><a href="#导演" class="headerlink" title="导演"></a>导演</h3><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><h3 id="层"><a href="#层" class="headerlink" title="层"></a>层</h3><h3 id="精灵"><a href="#精灵" class="headerlink" title="精灵"></a>精灵</h3><h2 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h2>
+        <p><em>cocos2d-x游戏开发初学笔记</em></p>
+<h2 id="导演，场景，层和精灵"><a href="#导演，场景，层和精灵" class="headerlink" title="导演，场景，层和精灵"></a>导演，场景，层和精灵</h2><hr>
+<h3 id="导演（Director）"><a href="#导演（Director）" class="headerlink" title="导演（Director）"></a>导演（Director）</h3><ul>
+<li>导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行<h3 id="场景（Scene）"><a href="#场景（Scene）" class="headerlink" title="场景（Scene）"></a>场景（Scene）</h3></li>
+<li>一个游戏通常由多个场景构成，包括需要显示的所有游戏元素<h3 id="层（Layer）"><a href="#层（Layer）" class="headerlink" title="层（Layer）"></a>层（Layer）</h3></li>
+<li>概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）<h3 id="精灵（Sprite）"><a href="#精灵（Sprite）" class="headerlink" title="精灵（Sprite）"></a>精灵（Sprite）</h3></li>
+<li>精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。</li>
+</ul>
+<h2 id="cocos2dx的组成对象关系图"><a href="#cocos2dx的组成对象关系图" class="headerlink" title="cocos2dx的组成对象关系图"></a>cocos2dx的组成对象关系图</h2><hr>
+<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true" alt="cocos基本角色"></div></p>
+<div align="left">
+
+<p>由以上分类，cocos2dx将对象分为节点类（Node），导演类（Director），场景类（Scene），层类（Layer）和精灵（Sprite）类</p>
+<h2 id="Node类（Node）"><a href="#Node类（Node）" class="headerlink" title="Node类（Node）"></a>Node类（Node）</h2><hr>
+<p>node类从Ref类公有继承而来，同时也是其他节点的父类，在精灵类（Sprite）头文件有如下定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSprite.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Sprite</span> :</span> <span class="keyword">public</span> Node, <span class="keyword">public</span> TextureProtocol&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在场景类（Scene）头文件中：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCScene.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Scene</span> :</span> <span class="keyword">public</span> Node&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在层类（Layer）中<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCLayer.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Layer</span> :</span> <span class="keyword">public</span> Node&#123;......&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>其头文件声明在工程目录cocos2d\cocos\2d\CCNode.h下。一个Node主要功能有：</p>
+<ul>
+<li><p>包含其他节点</p>
+</li>
+<li><p>通过定时器预定消息和使用回调</p>
+</li>
+<li><p>执行动作</p>
+<h3 id="Node类的成员变量如下"><a href="#Node类的成员变量如下" class="headerlink" title="Node类的成员变量如下"></a>Node类的成员变量如下</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCNode.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Node</span> :</span> <span class="keyword">public</span> Ref</span><br><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">float</span> _rotationX;               <span class="comment">///&lt; 表示节点X轴的水平旋转角度</span></span><br><span class="line">    <span class="keyword">float</span> _rotationY;               <span class="comment">///&lt; 表示节点Y轴的水平旋转角度</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// rotation Z is decomposed in 2 to simulate Skew for Flash animations</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_X;             <span class="comment">///&lt; rotation angle on Z-axis, component X</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_Y;             <span class="comment">///&lt; rotation angle on Z-axis, component Y</span></span><br><span class="line">    </span><br><span class="line">    Quaternion _rotationQuat;       <span class="comment">///rotation using quaternion, if _rotationZ_X == _rotationZ_Y, _rotationQuat = RotationZ_X * RotationY * RotationX, else _rotationQuat = RotationY * RotationX</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> _scaleX;                  <span class="comment">///&lt; scaling factor on x-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleY;                  <span class="comment">///&lt; scaling factor on y-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleZ;                  <span class="comment">///&lt; scaling factor on z-axis</span></span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Node类的成员函数"><a href="#Node类的成员函数" class="headerlink" title="Node类的成员函数"></a>Node类的成员函数</h3><blockquote>
+<p>Node的成员函数分为三类，分别是对节点的处理，如何执行动作和使用定时器预定信息，还有其他少数应用功能的函数</p>
+<ul>
+<li>节点处理函数</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>节点动作</p>
+</li>
+<li><p>定时器</p>
+</li>
+<li><p>其他</p>
+</li>
+</ul>
+<h2 id="导演类（Director）"><a href="#导演类（Director）" class="headerlink" title="导演类（Director）"></a>导演类（Director）</h2><hr>
+<p>导演只有一个，所以Director是一个单例类，通过getInstance()函数获取实例，导演类的功能有以下：</p>
+<ul>
+<li><p>初始化OpenGL环境</p>
+</li>
+<li><p>创建，访问和切换场景，且一个时间点上只能运行一个场景</p>
+</li>
+<li><p>访问Cocos2d-x配置</p>
+</li>
+<li><p>访问视图</p>
+</li>
+<li><p>暂停，恢复和结束游戏</p>
+<h2 id="场景类（Scene）"><a href="#场景类（Scene）" class="headerlink" title="场景类（Scene）"></a>场景类（Scene）</h2></li>
+</ul>
+<hr>
+<p>场景类是层类的容器，按游戏内容分为三类：</p>
+<ul>
+<li><p>展示场景类：提示，游戏介绍，帮助</p>
+</li>
+<li><p>选项类场景：菜单，参数</p>
+</li>
+<li><p>游戏内容场景：游戏内容</p>
+</li>
+</ul>
+<h2 id="层类（Layer）"><a href="#层类（Layer）" class="headerlink" title="层类（Layer）"></a>层类（Layer）</h2><hr>
+<p>允许用户输入</p>
+<h2 id="精灵类（Sprite）"><a href="#精灵类（Sprite）" class="headerlink" title="精灵类（Sprite）"></a>精灵类（Sprite）</h2><hr>
+<p>精灵是游戏中最小可见单位，在游戏中显示为一个图像，该图像被加载入内存时，被处理成未压缩的纹理图像来存储，再次使用时可以直接从内存读取该图像而不用重新加载图像内存，纹理的宽度和高度必须是2的n次方，纹理相关类如下：</p>
+<ul>
+<li>Texture2D（纹理）：创建OpenGL 2D纹理图像</li>
+<li>TextureCache（纹理缓存）：单例，加载和管理纹理图像</li>
+<li>TextureAtlas（纹理图集）：可以是Texture2D支持的文件类型</li>
+</ul>
+<p>精灵类不像其他类一样只继承Node，同时继承和派生其他精灵，如下图所示：</p>
+<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/sprite.jpg?raw=true" alt="精灵类"></div></p>
+<div align="left">
+
+<h2 id="调度器（Schedule）"><a href="#调度器（Schedule）" class="headerlink" title="调度器（Schedule）"></a>调度器（Schedule）</h2><hr>
+</div></div>
         
         
         <p class="article-more-link">
