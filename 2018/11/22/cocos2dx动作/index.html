@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        test_my_site | balabala的事记
+        cocos2dx动作 | balabala的事记
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="test_my_site | balabala的事记">
+    <meta property="og:title" content="cocos2dx动作 | balabala的事记">
     <meta property="og:description" content="">
     
      <!--[if lte IE 9]>
@@ -219,7 +219,7 @@
 		
 	
         <p class="article-headline-p">
-            test_my_site
+            cocos2dx动作
         </p>
     </div>
 
@@ -237,7 +237,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>bamend</strong>
-        <span>Nov 17, 2018</span>
+        <span>Nov 22, 2018</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -272,21 +272,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&via=bamend" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=cocos2dx动作&url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html&via=bamend" target="_blank">
         <li class="mdl-menu__item">
             Share to Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/17/test-my-site/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html" target="_blank">
         <li class="mdl-menu__item">
             Share to Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=cocos2dx动作&url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             Share to Weibo
         </li>
@@ -298,9 +298,13 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<h1 id="奇怪的现象"><a href="#奇怪的现象" class="headerlink" title="奇怪的现象"></a>奇怪的现象</h1><blockquote>
-<p>为啥创建这个博客时git上要是<a href="https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了" target="_blank" rel="noopener">https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了</a></p>
-</blockquote>
+		<p><em>《cocos2d-x游戏开发》初学笔记</em></p>
+<h2 id="动作基类Action"><a href="#动作基类Action" class="headerlink" title="动作基类Action"></a>动作基类Action</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @brief Base class for Action objects.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Action</span> :</span> <span class="keyword">public</span> Ref, <span class="keyword">public</span> Clonable&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class FiniteTimeAction</span></span><br><span class="line"><span class="comment"> * @brief</span></span><br><span class="line"><span class="comment"> * Base class actions that do have a finite time duration.</span></span><br><span class="line"><span class="comment"> * Possible actions:</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 0 seconds.</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 35.5 seconds.</span></span><br><span class="line"><span class="comment"> * Infinite time actions are valid.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">FiniteTimeAction</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Follow</span></span><br><span class="line"><span class="comment"> * @brief Follow is an action that "follows" a node.</span></span><br><span class="line"><span class="comment"> * Eg:</span></span><br><span class="line"><span class="comment"> * @code</span></span><br><span class="line"><span class="comment"> * layer-&gt;runAction(Follow::create(hero));</span></span><br><span class="line"><span class="comment"> * @endcode</span></span><br><span class="line"><span class="comment"> * Instead of using Camera as a "follower", use this action instead.</span></span><br><span class="line"><span class="comment"> * @since v0.99.2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Follow</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Speed</span></span><br><span class="line"><span class="comment"> * @brief Changes the speed of an action, making it take longer (speed&gt;1)</span></span><br><span class="line"><span class="comment"> * or shorter (speed&lt;1) time.</span></span><br><span class="line"><span class="comment"> * Useful to simulate 'slow motion' or 'fast forward' effect.</span></span><br><span class="line"><span class="comment"> * @warning This action can't be Sequenceable because it is not an IntervalAction.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Speed</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCActionInstant.h</span></span><br><span class="line"><span class="comment">/** @class ActionInstant</span></span><br><span class="line"><span class="comment">* @brief Instant actions are immediate actions. They don't have a duration like the IntervalAction actions.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInstant</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCActionInstant.h</span></span><br><span class="line"><span class="comment">/** @class ActionInstant</span></span><br><span class="line"><span class="comment">* @brief Instant actions are immediate actions. They don't have a duration like the IntervalAction actions.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInstant</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
 
 	
 	
@@ -321,19 +325,19 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2018/11/22/cocos2dx基本概念/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/11/22/关于cache和buffer/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
@@ -505,9 +509,9 @@ It will not impact the appearance and can give developers a lot of support :)
     
         <!-- Post Nav -->
         
-            <a class="prev-content fab" href="/2018/11/22/cocos2dx基本概念/" title="cocos2dx基础概念"><i class="material-icons">keyboard_arrow_left</i></a>
-        
 
+        
+            <a class="prev-content fab" href="/2018/11/22/关于cache和buffer/" title="关于cache和buffer"><i class="material-icons">keyboard_arrow_right</i></a>
         
     
     

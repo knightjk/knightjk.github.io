@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        test_my_site | balabala的事记
+        linux绑核 | balabala的事记
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="test_my_site | balabala的事记">
+    <meta property="og:title" content="linux绑核 | balabala的事记">
     <meta property="og:description" content="">
     
      <!--[if lte IE 9]>
@@ -219,7 +219,7 @@
 		
 	
         <p class="article-headline-p">
-            test_my_site
+            linux绑核
         </p>
     </div>
 
@@ -237,7 +237,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>bamend</strong>
-        <span>Nov 17, 2018</span>
+        <span>Nov 22, 2018</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -272,21 +272,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&via=bamend" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=linux绑核&url=http://yoursite.com//2018/11/22/linux绑核/index.html&via=bamend" target="_blank">
         <li class="mdl-menu__item">
             Share to Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/17/test-my-site/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/22/linux绑核/index.html" target="_blank">
         <li class="mdl-menu__item">
             Share to Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=linux绑核&url=http://yoursite.com//2018/11/22/linux绑核/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             Share to Weibo
         </li>
@@ -298,9 +298,9 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<h1 id="奇怪的现象"><a href="#奇怪的现象" class="headerlink" title="奇怪的现象"></a>奇怪的现象</h1><blockquote>
-<p>为啥创建这个博客时git上要是<a href="https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了" target="_blank" rel="noopener">https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了</a></p>
-</blockquote>
+		<h2 id="应用函数"><a href="#应用函数" class="headerlink" title="应用函数"></a>应用函数</h2><p>sched_getaffinity()//获取目标进程所用CPU信息<br>sched_setaffinity()//设置目标进程所用CPU信息<br>CPU_COUNT()//获取当前进程可用CPU核心个数<br>CPU_SET()//设置当前进程对应的CPU核心<br>CPU_ISSET()//判断指定的CPU核是否是对应的正在使用的CPU核<br>get_nprocs_conf()//获取CPU核心数<br>get_nprocs()//获取当前进程可用CPU核心数<br>sysconf(_SC_NPROCESSORS_CONF)//程序已配置的核心数(类似于get_nprocs_conf)<br>sysconf(_SC_NPROCESSORS_ONLN)//程序当前可用核心数(类似于get_nprocs？)<br>pthread_setaffinity_np()//线程绑定CPU<br>pthread_getaffinity_np()//获取线程所用CPU信息<br>//据说，线程和进程的CPU绑定是分开的。也就是进程在绑定一个CPU的同时线程可用绑定另外一个CPU，得试下。</p>
+<p>syscall(SYS_gettid)<br>gettid()与pthread_self()不一样，pthread_self()获取的线程id是针对进程内部的线程id，此线程id可以在不同进程复用，符合POSIX thread  ID，gettid()获取内核线程的id，在GLibc库中是不提供的指定函数，通过调用syscall(SYS_gettid)来获取该线程id。</p>
+<p>top -p pid<br>输入f,把P选项调出来，再输入q<br>然后输入H<br>在top中输入H和获取进程中所有线程状态</p>
 
 	
 	
@@ -321,7 +321,7 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2018/11/22/cocos2dx基本概念/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/11/22/关于cache和buffer/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -334,6 +334,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/11/22/hello-world/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
@@ -505,9 +513,11 @@ It will not impact the appearance and can give developers a lot of support :)
     
         <!-- Post Nav -->
         
-            <a class="prev-content fab" href="/2018/11/22/cocos2dx基本概念/" title="cocos2dx基础概念"><i class="material-icons">keyboard_arrow_left</i></a>
+            <a class="prev-content fab" href="/2018/11/22/关于cache和buffer/" title="关于cache和buffer"><i class="material-icons">keyboard_arrow_left</i></a>
         
 
+        
+            <a class="prev-content fab" href="/2018/11/22/hello-world/" title="Hello World"><i class="material-icons">keyboard_arrow_right</i></a>
         
     
     

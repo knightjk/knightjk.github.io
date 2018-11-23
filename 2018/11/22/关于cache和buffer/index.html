@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        test_my_site | balabala的事记
+        关于cache和buffer | balabala的事记
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="test_my_site | balabala的事记">
+    <meta property="og:title" content="关于cache和buffer | balabala的事记">
     <meta property="og:description" content="">
     
      <!--[if lte IE 9]>
@@ -219,7 +219,7 @@
 		
 	
         <p class="article-headline-p">
-            test_my_site
+            关于cache和buffer
         </p>
     </div>
 
@@ -237,7 +237,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>bamend</strong>
-        <span>Nov 17, 2018</span>
+        <span>Nov 22, 2018</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -272,21 +272,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&via=bamend" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=关于cache和buffer&url=http://yoursite.com//2018/11/22/关于cache和buffer/index.html&via=bamend" target="_blank">
         <li class="mdl-menu__item">
             Share to Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/17/test-my-site/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/22/关于cache和buffer/index.html" target="_blank">
         <li class="mdl-menu__item">
             Share to Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=test_my_site&url=http://yoursite.com//2018/11/17/test-my-site/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=关于cache和buffer&url=http://yoursite.com//2018/11/22/关于cache和buffer/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             Share to Weibo
         </li>
@@ -298,9 +298,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<h1 id="奇怪的现象"><a href="#奇怪的现象" class="headerlink" title="奇怪的现象"></a>奇怪的现象</h1><blockquote>
-<p>为啥创建这个博客时git上要是<a href="https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了" target="_blank" rel="noopener">https://github.com/aaa/bbb.github.io的话部署bbb.github.io就起不来，访问不了，而当创建为https://github.com/aaa/aaa.github.io后再访问bbb.github.io就访问得了</a></p>
-</blockquote>
+		<p>cache&lt;-磁盘，在磁盘读取时会有预读操作来预判提高磁盘读取效率<br>buffer-&gt;磁盘，在磁盘写入时会产生缓存空间(这是对SSD、磁盘写入放大的一种对应措施，因为写入时需要擦除，擦除的大小并不会是任意擦除而是按扇区或块擦除，因此在写入前会读出原有数据然后再擦除后写入包括原来读出的所有数据)，当磁盘写入速度慢时利用这部分空间存储临时数据。<br>    由于buffer的上述机制，使得在数据流输入到磁盘或者在终端(终端也有键盘的输入缓冲区)的过程有一些延迟，而导致buffer中的数据冲刷到目标上(磁盘或终端)的条件有以下几种：<br>    1.程序正常结束（如果程序崩溃时输出缓存不会更新）<br>    2.缓冲区满<br>    3.结束操作符，如‘\n’,endl等<br>    4.C++中使用unitbuf来设置流的内部状态<br>    5.清缓存，如fflush<br>    6.C++相关联流被读写时。<br>    buffer包括目录项缓存(描述文件系统路径名的目录项对象)，索引节点缓存(描述磁盘索引节点的索引节点对象)，页高速缓存(完整的数据页对象)。<br>释放缓存：<br>sync     #同步数据以防丢失<br>To free pagecache:<br>echo 1 &gt; /proc/sys/vm/drop_caches<br>To free dentries and inodes:<br>echo 2 &gt; /proc/sys/vm/drop_caches<br>To free pagecache, dentries and inodes:<br>echo 3 &gt; /proc/sys/vm/drop_caches</p>
 
 	
 	
@@ -321,7 +319,7 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2018/11/22/cocos2dx基本概念/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/11/22/cocos2dx动作/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -334,6 +332,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/11/22/linux绑核/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
         </div>
@@ -505,9 +511,11 @@ It will not impact the appearance and can give developers a lot of support :)
     
         <!-- Post Nav -->
         
-            <a class="prev-content fab" href="/2018/11/22/cocos2dx基本概念/" title="cocos2dx基础概念"><i class="material-icons">keyboard_arrow_left</i></a>
+            <a class="prev-content fab" href="/2018/11/22/cocos2dx动作/" title="cocos2dx动作"><i class="material-icons">keyboard_arrow_left</i></a>
         
 
+        
+            <a class="prev-content fab" href="/2018/11/22/linux绑核/" title="linux绑核"><i class="material-icons">keyboard_arrow_right</i></a>
         
     
     
