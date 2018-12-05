@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        cocos2dx基础概念 | balabala的事记
+        快思慢想 | balabala的事记
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="cocos2dx基础概念 | balabala的事记">
+    <meta property="og:title" content="快思慢想 | balabala的事记">
     <meta property="og:description" content="">
     
      <!--[if lte IE 9]>
@@ -219,7 +219,7 @@
 		
 	
         <p class="article-headline-p">
-            cocos2dx基础概念
+            快思慢想
         </p>
     </div>
 
@@ -237,7 +237,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>bamend</strong>
-        <span>Nov 22, 2018</span>
+        <span>Nov 29, 2018</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -272,21 +272,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=cocos2dx基础概念&url=http://yoursite.com//2018/11/22/cocos2dx基本概念/index.html&via=bamend" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=快思慢想&url=http://yoursite.com//2018/11/29/literature/快思慢想/index.html&via=bamend" target="_blank">
         <li class="mdl-menu__item">
             Share to Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/22/cocos2dx基本概念/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/29/literature/快思慢想/index.html" target="_blank">
         <li class="mdl-menu__item">
             Share to Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=cocos2dx基础概念&url=http://yoursite.com//2018/11/22/cocos2dx基本概念/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=快思慢想&url=http://yoursite.com//2018/11/29/literature/快思慢想/index.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             Share to Weibo
         </li>
@@ -298,97 +298,50 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><em>《cocos2d-x游戏开发》初学笔记</em></p>
-<h2 id="导演，场景，层和精灵"><a href="#导演，场景，层和精灵" class="headerlink" title="导演，场景，层和精灵"></a>导演，场景，层和精灵</h2><hr>
-<h3 id="导演（Director）"><a href="#导演（Director）" class="headerlink" title="导演（Director）"></a>导演（Director）</h3><ul>
-<li>导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行<h3 id="场景（Scene）"><a href="#场景（Scene）" class="headerlink" title="场景（Scene）"></a>场景（Scene）</h3></li>
-<li>一个游戏通常由多个场景构成，包括需要显示的所有游戏元素<h3 id="层（Layer）"><a href="#层（Layer）" class="headerlink" title="层（Layer）"></a>层（Layer）</h3></li>
-<li>概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）<h3 id="精灵（Sprite）"><a href="#精灵（Sprite）" class="headerlink" title="精灵（Sprite）"></a>精灵（Sprite）</h3></li>
-<li>精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。</li>
-</ul>
-<h2 id="cocos2dx的组成对象关系图"><a href="#cocos2dx的组成对象关系图" class="headerlink" title="cocos2dx的组成对象关系图"></a>cocos2dx的组成对象关系图</h2><hr>
-<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true" alt="cocos基本角色"></div></p>
-<div align="left">
+		<p><em>《Thinking,Fast and Slow》—— Daniel Kahneman</em></p>
+<h1 id="思考的系统"><a href="#思考的系统" class="headerlink" title="思考的系统"></a>思考的系统</h1><p style="text-indent:2em"><br><br></p>
 
-<p>由以上分类，cocos2dx将对象分为节点类（Node），导演类（Director），场景类（Scene），层类（Layer）和精灵（Sprite）类</p>
-<h2 id="Node类（Node）"><a href="#Node类（Node）" class="headerlink" title="Node类（Node）"></a>Node类（Node）</h2><hr>
-<p>node类从Ref类公有继承而来，同时也是其他节点的父类，在精灵类（Sprite）头文件有如下定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSprite.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Sprite</span> :</span> <span class="keyword">public</span> Node, <span class="keyword">public</span> TextureProtocol&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>在场景类（Scene）头文件中：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCScene.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Scene</span> :</span> <span class="keyword">public</span> Node&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>在层类（Layer）中<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCLayer.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Layer</span> :</span> <span class="keyword">public</span> Node&#123;......&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>其头文件声明在工程目录cocos2d\cocos\2d\CCNode.h下。一个Node主要功能有：</p>
-<ul>
-<li><p>包含其他节点</p>
-</li>
-<li><p>通过定时器预定消息和使用回调</p>
-</li>
-<li><p>执行动作</p>
-<h3 id="Node类的成员变量如下"><a href="#Node类的成员变量如下" class="headerlink" title="Node类的成员变量如下"></a>Node类的成员变量如下</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCNode.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Node</span> :</span> <span class="keyword">public</span> Ref</span><br><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">float</span> _rotationX;               <span class="comment">///&lt; 表示节点X轴的水平旋转角度</span></span><br><span class="line">    <span class="keyword">float</span> _rotationY;               <span class="comment">///&lt; 表示节点Y轴的水平旋转角度</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// rotation Z is decomposed in 2 to simulate Skew for Flash animations</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_X;             <span class="comment">///&lt; rotation angle on Z-axis, component X</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_Y;             <span class="comment">///&lt; rotation angle on Z-axis, component Y</span></span><br><span class="line">    </span><br><span class="line">    Quaternion _rotationQuat;       <span class="comment">///rotation using quaternion, if _rotationZ_X == _rotationZ_Y, _rotationQuat = RotationZ_X * RotationY * RotationX, else _rotationQuat = RotationY * RotationX</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> _scaleX;                  <span class="comment">///&lt; scaling factor on x-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleY;                  <span class="comment">///&lt; scaling factor on y-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleZ;                  <span class="comment">///&lt; scaling factor on z-axis</span></span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Node类的成员函数"><a href="#Node类的成员函数" class="headerlink" title="Node类的成员函数"></a>Node类的成员函数</h3><blockquote>
-<p>Node的成员函数分为三类，分别是对节点的处理，如何执行动作和使用定时器预定信息，还有其他少数应用功能的函数</p>
+<h2 id="系统一"><a href="#系统一" class="headerlink" title="系统一"></a>系统一</h2><blockquote>
+<p><del>哎呀看过了好懒得写</del>待填</p>
 </blockquote>
-<ul>
-<li><p>节点处理函数</p>
-</li>
-<li><p>节点动作</p>
-</li>
-<li><p>定时器</p>
-</li>
-<li><p>其他</p>
-</li>
-</ul>
-<h2 id="导演类（Director）"><a href="#导演类（Director）" class="headerlink" title="导演类（Director）"></a>导演类（Director）</h2><hr>
-<p>导演只有一个，所以Director是一个单例类，通过getInstance()函数获取实例，导演类的功能有以下：</p>
-<ul>
-<li><p>初始化OpenGL环境</p>
-</li>
-<li><p>创建，访问和切换场景，且一个时间点上只能运行一个场景</p>
-</li>
-<li><p>访问Cocos2d-x配置</p>
-</li>
-<li><p>访问视图</p>
-</li>
-<li><p>暂停，恢复和结束游戏</p>
-<h2 id="场景类（Scene）"><a href="#场景类（Scene）" class="headerlink" title="场景类（Scene）"></a>场景类（Scene）</h2></li>
-</ul>
-<hr>
-<p>场景类是层类的容器，按游戏内容分为三类：</p>
-<ul>
-<li><p>展示场景类：提示，游戏介绍，帮助</p>
-</li>
-<li><p>选项类场景：菜单，参数</p>
-</li>
-<li><p>游戏内容场景：游戏内容</p>
-</li>
-</ul>
-<h2 id="层类（Layer）"><a href="#层类（Layer）" class="headerlink" title="层类（Layer）"></a>层类（Layer）</h2><hr>
-<p>允许用户输入</p>
-<h2 id="精灵类（Sprite）"><a href="#精灵类（Sprite）" class="headerlink" title="精灵类（Sprite）"></a>精灵类（Sprite）</h2><hr>
-<p>精灵是游戏中最小可见单位，在游戏中显示为一个图像，该图像被加载入内存时，被处理成未压缩的纹理图像来存储，再次使用时可以直接从内存读取该图像而不用重新加载图像内存，纹理即图像，纹理的宽度和高度必须是2的n次方，纹理相关类如下：</p>
-<ul>
-<li>Texture2D（纹理）：创建OpenGL 2D纹理图像</li>
-<li>TextureCache（纹理缓存）：单例，加载和管理纹理图像</li>
-<li>TextureAtlas（纹理图集）：可以是Texture2D支持的文件类型</li>
-</ul>
-<h3 id="精灵类（Sprite）-1"><a href="#精灵类（Sprite）-1" class="headerlink" title="精灵类（Sprite）"></a>精灵类（Sprite）</h3><p>精灵类不像其他类一样只继承Node，同时继承和派生其他精灵，如下图所示：</p>
-<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/sprite.jpg?raw=true" alt="精灵类"></div></p>
-<div align="left">
+<h2 id="系统二"><a href="#系统二" class="headerlink" title="系统二"></a>系统二</h2><blockquote>
+<p><del>哎呀看过了好懒得写</del>待填</p>
+</blockquote>
+<h1 id="心无二用"><a href="#心无二用" class="headerlink" title="心无二用"></a>心无二用</h1><p style="text-indent:2em"><br>很少有人能够同时做着激烈的运动（或者带点复杂），大脑中同时做着复杂的计算，在我们的大脑CPU资源限制下，做复杂的事情就需要分时运作了。但是我们可以一边慢走一边说话，因为走的时候不用费脑力去控制双腿，而说话会占用相对走路使用大量的系统二的资源，这两种资源的抢占在能够被大脑包容的范围内。回想我第一次在电脑打字时，需要逐个看键盘逐个打出，这样消耗了更多的精力在寻找键盘位置上，而后面却不用怎么消耗资源在寻找合适的字。<br></p>
 
-<h3 id="精灵帧类（SpriteFrame）"><a href="#精灵帧类（SpriteFrame）" class="headerlink" title="精灵帧类（SpriteFrame）"></a>精灵帧类（SpriteFrame）</h3><p>精灵帧是通过被其快速更换来实现动态效果，精灵帧类从Ref类直接继承而不从Node类继承，这一点与精灵类不一样：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSpriteFrame.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">SpriteFrame</span> :</span> <span class="keyword">public</span> Ref, <span class="keyword">public</span> Clonable&#123;......&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="精灵帧缓存类（SpriteFrameCache）"><a href="#精灵帧缓存类（SpriteFrameCache）" class="headerlink" title="精灵帧缓存类（SpriteFrameCache）"></a>精灵帧缓存类（SpriteFrameCache）</h3><p>精灵帧缓存类是一个单例类(通过getInstance获取)，也是直接继承自Ref类，所有精灵可共享用于存储精灵帧来提高运行效率。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSpriteFrameCache.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">SpriteFrameCache</span> :</span> <span class="keyword">public</span> Ref&#123;......&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="精灵表单类（SpriteBatchNode）"><a href="#精灵表单类（SpriteBatchNode）" class="headerlink" title="精灵表单类（SpriteBatchNode）"></a>精灵表单类（SpriteBatchNode）</h3><p>OpenGL ES将图片绑定Sprite和渲染会大量消耗CPU，每个屏幕上的精灵会导致程序运行越来越卡，通过精灵表单（SpriteBatchNode），使用同一张纹理图片，这样OpenGL ES只需要一次纹理绘制，提高运行速度。<br>精灵表单的限制：</p>
-<ul>
-<li><p>SpriteBatchNode只能接受精灵对象为其子节点</p>
+<h2 id="心智工作的形式"><a href="#心智工作的形式" class="headerlink" title="心智工作的形式"></a>心智工作的形式</h2><ul>
+<li><p>需要的集中注意力 —— 认知努力</p>
+<p>  就是把感受到的东西输入大脑，由大脑用力去分析判断的思考过程。</p>
 </li>
-<li><p>所有精灵对象必须使用同一张干净的纹理图片</p>
-<blockquote>
-<p>精灵表单是一张组合成的图片，并且附带有一个图片文件列表记录图片(后缀名为<em>.plist)。通过加载</em>.plist的信息，从组合成的图片里面提取对应的图片区域，就生成对应区域的精灵；精灵表单的制作可用TexturePacker。</p>
-</blockquote>
+<li><p>主要的控制对无关事务的注意 —— 自我控制</p>
+<p>  就是不受其他事物影响所做出的努力的过程。</p>
+</li>
+<li><p>心流模式</p>
+<p>  即不用专门过多把精力放在自我控制的过程，自然而然地去做认知努力的过程。<br></p><p></p>
 </li>
 </ul>
-<h2 id="调度器（Schedule）"><a href="#调度器（Schedule）" class="headerlink" title="调度器（Schedule）"></a>调度器（Schedule）</h2><hr>
-</div></div>
+<h2 id="自我损耗"><a href="#自我损耗" class="headerlink" title="自我损耗"></a>自我损耗</h2><p style="text-indent:2em"><br>    需要克服厌恶，强迫地去做某一件事，这个时候比较不愿意或不能够通过自我控制地去做这件事情。这种过程就存在自我损耗。<br></p>
+
+<h2 id="控制和理性"><a href="#控制和理性" class="headerlink" title="控制和理性"></a>控制和理性</h2><ul>
+<li><p>接受奖励延迟</p>
+</li>
+<li><p>抵御眼前诱导</p>
+</li>
+<li><p>对系统一所提供的思考结论保持清醒</p>
+</li>
+</ul>
+<h1 id="联结与促发"><a href="#联结与促发" class="headerlink" title="联结与促发"></a>联结与促发</h1><h2 id="联结"><a href="#联结" class="headerlink" title="联结"></a>联结</h2><ul>
+<li><p>联结的三大原则：相似性，时间地点连续性，因果关系 —— Havid Hume</p>
+<p style="text-indent:2em"><br>  当我们遇到已经在我们身上出现过的事物时，遇到相似的事物总会想起与此事物的相关性，并且做出对应的反应，举个栗子，“闻梅止渴”，当吃过梅的人了解它的滋味后就知道它的酸味只有通过大量分泌唾液来减少。下次听到这种水果时立刻能够做出相应的反应——大量分泌唾液。在这个过程中没有一处不通过实践来证明这种原则关系。当然没吃过梅子的人当然不能达到“闻梅止渴”这个技能，这也说明认知是跟身体有关，而不仅仅用大脑而已 —— 这就是Mark Johnson所说的[ 身体内含的认知 ]。<br></p>
+</li>
+<li><p>联结的类别：因果联结，属性联结，所属联结等</p>
+</li>
+</ul>
+<h2 id="促发效应"><a href="#促发效应" class="headerlink" title="促发效应"></a>促发效应</h2><p style="text-indent:2em"><br>    促发基于存在乎大脑的联结关系，比如，在我们看到芬芳花朵图片时，心情不免放松，当看见生气的脸图时，心理不免紧张。即使系统二已经再三告诉自己这些图片并没有实际的影响 —— 即闻不到花香，也听不到唾骂。但我们还是受到这种系统一产生的促发影响，并且不是有意识地做出相应的判断和选择，并且很可能影响接下来的心情和行为。所以促发效应告诉我们，身边的环境能够影响本身的行为，或者本身的习惯性行为会影响对事物本身的思考（可以做快速选择题来验证，结果会发生惯性选择效应），但我们可以选择引导我们的触发环境，[ 不管感觉怎样，你的行为要冷静而仁慈 ]。<br></p>
+
+
+
+
 	
 	
 	
@@ -408,7 +361,7 @@
     
     <!-- Prev Nav -->
     
-        <a href="/2018/11/22/hello-world/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/12/01/C++/C++对象在空间的布局/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -421,14 +374,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2018/11/17/test-my-site/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
         </div>
@@ -508,7 +453,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">6</span></a>
+            <a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a>
         </li></ul>
     </li>
 
@@ -525,7 +470,7 @@
     <li>
         <a href="#">
              Article Number
-             <span class="sidebar-badge">6</span>
+             <span class="sidebar-badge">2</span>
         </a>
     </li>
 </ul>
@@ -600,11 +545,9 @@ It will not impact the appearance and can give developers a lot of support :)
     
         <!-- Post Nav -->
         
-            <a class="prev-content fab" href="/2018/11/22/hello-world/" title="Hello World"><i class="material-icons">keyboard_arrow_left</i></a>
+            <a class="prev-content fab" href="/2018/12/01/C++/C++对象在空间的布局/" title="C++对象在空间中的布局"><i class="material-icons">keyboard_arrow_left</i></a>
         
 
-        
-            <a class="prev-content fab" href="/2018/11/17/test-my-site/" title="test_my_site"><i class="material-icons">keyboard_arrow_right</i></a>
         
     
     

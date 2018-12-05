@@ -4,7 +4,7 @@
     <!-- Title -->
     
     <title>
-        cocos2dx动作 | balabala的事记
+        balabala的事记
     </title>
     
     <!-- Favicons -->
@@ -40,7 +40,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="cocos2dx动作 | balabala的事记">
+    <meta property="og:title" content="balabala的事记">
     <meta property="og:description" content="">
     
      <!--[if lte IE 9]>
@@ -219,7 +219,7 @@
 		
 	
         <p class="article-headline-p">
-            cocos2dx动作
+            
         </p>
     </div>
 
@@ -237,7 +237,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>bamend</strong>
-        <span>Nov 22, 2018</span>
+        <span>Nov 30, 2018</span>
     </div>
     
     <div class="section-spacer"></div>
@@ -272,21 +272,21 @@
     
     
     <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=cocos2dx动作&url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html&via=bamend" target="_blank">
+    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://yoursite.com//unfinish/literature/快思慢想.html&via=bamend" target="_blank">
         <li class="mdl-menu__item">
             Share to Twitter
         </li>
     </a>
     
     <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html" target="_blank">
+    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//unfinish/literature/快思慢想.html" target="_blank">
         <li class="mdl-menu__item">
             Share to Google+
         </li>
     </a>
     
     <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=cocos2dx动作&url=http://yoursite.com//2018/11/22/cocos2dx动作/index.html&pic=&searchPic=false&style=simple" target="_blank">
+    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com//unfinish/literature/快思慢想.html&pic=&searchPic=false&style=simple" target="_blank">
         <li class="mdl-menu__item">
             Share to Weibo
         </li>
@@ -298,13 +298,44 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
-		<p><em>《cocos2d-x游戏开发》初学笔记</em></p>
-<h2 id="动作基类Action"><a href="#动作基类Action" class="headerlink" title="动作基类Action"></a>动作基类Action</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @brief Base class for Action objects.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Action</span> :</span> <span class="keyword">public</span> Ref, <span class="keyword">public</span> Clonable&#123;......&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class FiniteTimeAction</span></span><br><span class="line"><span class="comment"> * @brief</span></span><br><span class="line"><span class="comment"> * Base class actions that do have a finite time duration.</span></span><br><span class="line"><span class="comment"> * Possible actions:</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 0 seconds.</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 35.5 seconds.</span></span><br><span class="line"><span class="comment"> * Infinite time actions are valid.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">FiniteTimeAction</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Follow</span></span><br><span class="line"><span class="comment"> * @brief Follow is an action that "follows" a node.</span></span><br><span class="line"><span class="comment"> * Eg:</span></span><br><span class="line"><span class="comment"> * @code</span></span><br><span class="line"><span class="comment"> * layer-&gt;runAction(Follow::create(hero));</span></span><br><span class="line"><span class="comment"> * @endcode</span></span><br><span class="line"><span class="comment"> * Instead of using Camera as a "follower", use this action instead.</span></span><br><span class="line"><span class="comment"> * @since v0.99.2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Follow</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Speed</span></span><br><span class="line"><span class="comment"> * @brief Changes the speed of an action, making it take longer (speed&gt;1)</span></span><br><span class="line"><span class="comment"> * or shorter (speed&lt;1) time.</span></span><br><span class="line"><span class="comment"> * Useful to simulate 'slow motion' or 'fast forward' effect.</span></span><br><span class="line"><span class="comment"> * @warning This action can't be Sequenceable because it is not an IntervalAction.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Speed</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCActionInstant.h</span></span><br><span class="line"><span class="comment">/** @class ActionInstant</span></span><br><span class="line"><span class="comment">* @brief Instant actions are immediate actions. They don't have a duration like the IntervalAction actions.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInstant</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCActionInstant.h</span></span><br><span class="line"><span class="comment">/** @class ActionInstant</span></span><br><span class="line"><span class="comment">* @brief Instant actions are immediate actions. They don't have a duration like the IntervalAction actions.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInstant</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+		<hr>
+<h2 id="title-快思慢想"><a href="#title-快思慢想" class="headerlink" title="title:快思慢想"></a>title:快思慢想</h2><p><em>《Thinking,Fast and Slow》—— Daniel Kahneman</em></p>
+<h1 id="思考的系统"><a href="#思考的系统" class="headerlink" title="思考的系统"></a>思考的系统</h1><p style="text-indent:2em"><br><br></p>
+
+<h2 id="系统一"><a href="#系统一" class="headerlink" title="系统一"></a>系统一</h2><h2 id="系统二"><a href="#系统二" class="headerlink" title="系统二"></a>系统二</h2><h1 id="心无二用"><a href="#心无二用" class="headerlink" title="心无二用"></a>心无二用</h1><p style="text-indent:2em"><br>很少有人能够同时做着激烈的运动（或者带点复杂），大脑中同时做着复杂的计算，在我们的大脑CPU资源限制下，做复杂的事情就需要分时运作了。但是我们可以一边慢走一边说话，因为走的时候不用费脑力去控制双腿，而说话会占用相对走路使用大量的系统二的资源，这两种资源的抢占在能够被大脑包容的范围内。回想我第一次在电脑打字时，需要逐个看键盘逐个打出，这样消耗了更多的精力在寻找键盘位置上，而后面却不用怎么消耗资源在寻找合适的字。<br></p>
+
+<h2 id="心智工作的形式"><a href="#心智工作的形式" class="headerlink" title="心智工作的形式"></a>心智工作的形式</h2><ul>
+<li><p>需要的集中注意力 —— 认知努力</p>
+<p>  就是把感受到的东西输入大脑，由大脑用力去分析判断的思考过程。</p>
+</li>
+<li><p>主要的控制对无关事务的注意 —— 自我控制</p>
+<p>  就是不受其他事物影响所做出的努力的过程。</p>
+</li>
+<li><p>心流模式</p>
+<p>  即不用专门过多把精力放在自我控制的过程，自然而然地去做认知努力的过程。<br></p><p></p>
+</li>
+</ul>
+<h2 id="自我损耗"><a href="#自我损耗" class="headerlink" title="自我损耗"></a>自我损耗</h2><p style="text-indent:2em"><br>    需要克服厌恶，强迫地去做某一件事，这个时候比较不愿意或不能够通过自我控制地去做这件事情。这种过程就存在自我损耗。<br></p>
+
+<h2 id="控制和理性"><a href="#控制和理性" class="headerlink" title="控制和理性"></a>控制和理性</h2><ul>
+<li><p>接受奖励延迟</p>
+</li>
+<li><p>抵御眼前诱导</p>
+</li>
+<li><p>对系统一所提供的思考结论保持清醒</p>
+</li>
+</ul>
+<h1 id="联结与促发"><a href="#联结与促发" class="headerlink" title="联结与促发"></a>联结与促发</h1><h2 id="联结"><a href="#联结" class="headerlink" title="联结"></a>联结</h2><ul>
+<li><p>联结的三大原则：相似性，时间地点连续性，因果关系 —— Havid Hume</p>
+<p style="text-indent:2em"><br>  当我们遇到已经在我们身上出现过的事物时，遇到相似的事物总会想起与此事物的相关性，并且做出对应的反应，举个栗子，“闻梅止渴”，当吃过梅的人了解它的滋味后就知道它的酸味只有通过大量分泌唾液来减少。下次听到这种水果时立刻能够做出相应的反应——大量分泌唾液。在这个过程中没有一处不通过实践来证明这种原则关系。当然没吃过梅子的人当然不能达到“闻梅止渴”这个技能，这也说明认知是跟身体有关，而不仅仅用大脑而已 —— 这就是Mark Johnson所说的[ 身体内含的认知 ]。<br></p>
+</li>
+<li><p>联结的类别：因果联结，属性联结，所属联结等</p>
+</li>
+</ul>
+<h2 id="促发效应"><a href="#促发效应" class="headerlink" title="促发效应"></a>促发效应</h2><p style="text-indent:2em"><br>    促发基于存在乎大脑的联结关系，比如，在我们看到芬芳花朵图片时，心情不免放松，当看见生气的脸图时，心理不免紧张。即使系统二已经再三告诉自己这些图片并没有实际的影响 —— 即闻不到花香，也听不到唾骂。但我们还是受到这种系统一产生的促发影响，并且不是有意识地做出相应的判断和选择，并且很可能影响接下来的心情和行为。所以促发效应告诉我们，身边的环境能够影响本身的行为，或者本身的习惯性行为会影响对事物本身的思考（可以做快速选择题来验证，结果会发生惯性选择效应），但我们可以选择引导我们的触发环境，[ 不管感觉怎样，你的行为要冷静而仁慈 ]。<br></p>
+
+
+
 
 	
 	
@@ -330,14 +361,6 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
-    
-        <a href="/2018/11/22/关于cache和buffer/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
     
 </nav>
         </div>
@@ -417,7 +440,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">6</span></a>
+            <a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a>
         </li></ul>
     </li>
 
@@ -434,7 +457,7 @@
     <li>
         <a href="#">
              Article Number
-             <span class="sidebar-badge">6</span>
+             <span class="sidebar-badge">2</span>
         </a>
     </li>
 </ul>
@@ -506,13 +529,6 @@ It will not impact the appearance and can give developers a lot of support :)
         <i class="material-icons">expand_less</i>
     </a>
     
-    
-        <!-- Post Nav -->
-        
-
-        
-            <a class="prev-content fab" href="/2018/11/22/关于cache和buffer/" title="关于cache和buffer"><i class="material-icons">keyboard_arrow_right</i></a>
-        
     
     
     
