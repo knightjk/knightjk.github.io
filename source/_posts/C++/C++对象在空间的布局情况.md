@@ -642,9 +642,9 @@ $5 = 0x8049804
 (gdb) p/x *((&((int)cvdrived))+1)
 $6 = 0x804982c
 ```
->   cvdrived的第二个存储数据值0x804982c与已知的虚函数表指针值0x8049804相差不大，由此猜测0x804982c也是某个虚表的指针，接下来，按常规调试打印这两个虚表指针所指向的虚表的内容：
+>   cvdrived的第二个存储数据值0x804982c与已知的虚函数表指针值0x8049804相差不大，由此猜测0x804982c也是指针，接下来，按常规调试打印这指针所指向的内容：
 ```sh
-#第一个虚表
+#打印虚表（0x8049804）
 (gdb) p (long*)*((long*)0x8049804 + 0)
 $10 = (long *) 0x804912c <CVDriveD1::vfunc1()>
 (gdb) p (long*)*((long*)0x8049804 + 1)
@@ -657,225 +657,15 @@ $13 = (long *) 0x80491a2 <CVDriveD1::v2func1()>
 $14 = (long *) 0x80491d8 <CVDriveD1::vd1func1()>
 (gdb) p (long*)*((long*)0x8049804 + 5)
 $15 = (long *) 0xfffffffc
-#第二个虚表
+#第二个指针（0x804982c）
 (gdb) p (long*)*((long*)0x804982c + 0)
 $19 = (long *) 0x804916a <non-virtual thunk to CVDriveD1::vfunc1()>
 (gdb) p (long*)*((long*)0x804982c + 1)
 $20 = (long *) 0x0
 ```
->   看起来虚继承后的虚函数表的内容被”整理“过，该虚表中只存在被子类重写和没被子类重写的虚函数，并没有像非虚继承那样重复保存两份相同的虚函数指针在不同的虚表上（仔细观察虽然有两个CVDriveD1::vfunc1()函数，但其函数地址不同，而且已经指明其中一个为非虚函数）。由此，可以得出CVDriveD1对象的虚函数表结构图~~图图图！~~
+>   看起来虚继承后的虚函数表的内容被”整理“过，该虚表中只存在被子类重写和没被子类重写的虚函数，并没有像非虚继承那样重复保存两份相同的虚函数指针在不同的虚表上，仔细观察虽然有两个CVDriveD1::vfunc1()函数，但其函数地址不同（分别是0x804912c和0x804916a），而且已经指明其中一个为非虚函数（<non-virtual thunk to CVDriveD1::vfunc1()>）那么CVDriveD1存储的第二个指针的意义是什么，跪求大神们赐教？
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p style="text-indent:2em">
-    这说明出现多继承时，每一个基类如果有虚函数的话会使得子类要分配多一个虚函数指针来存储，由于CDriveB1和CDriveB2都是虚函数，CDriveDE1只有一个指向CDriveB1的虚函数表，其空间大小为4；CDriveDE2的情况与CDriveDE1一样，即使CDriveDE2在定义时有声明虚继承自CDeriveE1，但实际上CDeriveE1及其父类都没有实际的虚函数，所以没有具体分配空间来存储CDeriveE1的虚函数表指针（CDeriveE1及其父类CEmpty当前没有能够真正建立虚函数表的能力）；CDriveD就需要分配2*4（32位机器）的空间大小来存放两个虚函数表指针，但从语义上上CDriveD有3个继承的基类，分别是两个父类CDriveB1和CDriveB2，和一个祖先基类CBase1，理论上来说空间分布应该有三个虚函数表指针，难道这两个虚函数表指针存储的只有两个父类CDriveB1和CDriveB2的虚函数表指针，而祖先基类CBase1即使有虚函数也没有存放到孙子类CDriveD的对象中？答案是肯定的，下面的程序浅要证明这一点：
-</p>
-
-```C++
-    CDriveD cdrived;
-
-    cdrived.CDriveB1::func1();     //输出"CDriveB1::func1"
-    cdrived.CDriveB2::func1();     //输出"CDriveB2::func1"
-    cdrived.CBase1::func1();       //编译报错，提示Base1歧义
-```
-<p style="text-indent:2em">
-    这段验证证明了CDriveD中的两个虚函数指针是分别一个指向CDriveB1的虚函数表，另一个指向CDriveB2的虚函数表，并没有指向原始基类CBase1的虚函数表；
-</p>
-<p style="text-indent:2em">
-    但是孙子类CDriveD调用祖先类CBase1的虚函数时报错不是提示没有Base1类的对应函数，而是提示歧义("error: ‘CBase1’ is an ambiguous base of ‘CDriveD’)，试一下定义孙子类CDriveD的时候把祖先类的继承也加上的情况：
-</p>
-
-```C++
-class CDriveD: public CDriveB1,public CDriveB2,public CBase1
-{
-public: 
-    virtual void func1(void){cout<<"CDriveD::func1"<<endl;}; 
-};      //size of CDriveD is 12
-
-```
-<p style="text-indent:2em">
-    实际上，即使是这样定义孙子类CDriveD，祖先类的虚函数指针有存放在CDriveD的对象中，CDriveD想要调用Base1类的函数仍然是不可以的：
-</p>
-
-```C++
-    cdrived.CBase1::func1();       //编译报错，提示Base1歧义
-```
-<p style="text-indent:2em">
-    仔细看看可以发现，这两种情况下，CDriveD都处于菱形继承的状态，而且，CDriveB1与CDriveB2继承CBase1d的方式非虚继承，如果菱形继承中的继承方式为虚继承就可以解决这个问题（如果非虚继承，基类的函数在两个子类都有各自一份存储在各自的虚函数表里面，在使用虚继承基类后，两个子类都将基类的函数成分抽离出来，填坑用虚函数表解释下为何）
-</p>
-
-
-* 虚函数的调用
-<p style="text-indent:2em">
-    已知类的成员函数不占类对象内部的空间（成员函数统一放在内存中的代码区里面去了），为了更好地演示继承类的虚函数调用关系，将上述类成员函数添加其他非虚函数并修改如下关系：
-</p>
-
-<div align=center>![CDriveD的继承关系](https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true)
-<div align=left>
-
-```C++
-//代码实现如下
-class CBase1
-{
-public: 
-
-    void func1(void)
-    {
-        cout<<"CBase1::func1"<<endl;
-    };
-    void base1func1(void)
-    {
-        cout<<"CBase1::base1func1"<<endl;
-    };
-    virtual void vfunc1(void)
-    {
-        cout<<"CBase1::vfunc1"<<endl;
-    };
-private:
-    int baseData1;
-};
-
-class CDriveB1: public  CBase1 
-{
-public: 
-    void func1(void)
-    {
-        cout<<"CDriveB1::func1"<<endl;
-    };
-
-    void cdriveb1func1(void)
-    {
-        cout<<"CDriveB1::cdriveb1func1"<<endl;
-    };
-
-    virtual void vfunc1(void)
-    {
-        cout<<"CDriveB1::vfunc1"<<endl;
-    };
-
-
-};  //size of CDriveB1 is 4+4
-
-class CDriveB2: public  CBase1 
-{
-public: 
-    void func1(void)
-    {
-        cout<<"CDriveB2::func1"<<endl;
-    };
-
-    void cdriveb2func1(void)
-    {
-        cout<<"CDriveB2::cdriveb2func1"<<endl;
-    };
-
-    virtual void vfunc1(void)
-    {
-        cout<<"CDriveB2::vfunc1"<<endl;
-    } ;
-};         //size of CDriveB2 is 4
-
-class CDriveD: public CDriveB1,public CDriveB2 
-{
-public:
-
-    void cdrivedfunc1(void)
-    {
-        cout<<"CDriveD::cdrivedfunc1"<<endl;
-    };
-
-    virtual void vfunc1(void)
-    {
-        cout<<"CDriveD::vfunc1"<<endl;
-    };
-};      //size of CDriveD is 8
-```
-
-1. 父类调用单继承子类有无virtual声明的同名函数
-```C++
-    CDriveB1 cdriveb1;
-    CBase1* pbase1;
-
-    pbase1 = &cdriveb1;
-    pbase1->func1();    //输出“CBase1::func1”
-    pbase1->vfunc1();   //输出“CDriveB1::vfunc1”
-```
-2. 多继承子类调用父类非virtual声明的同名函数
-```C++
-    CDriveD cdrived;
-    cdrived.func1();            //编译出错，提示CDriveD没有函数func1，这很显然
-    cdrived.CDriveB2::func1();  //输出"CDriveB2::func1"
-```
-
-### 虚函数表指针与对象实例的关系
-
-* 证明虚函数表的位置
-
-* 说明如此设计原因
-
-> 虚函数表指针放在对象的起始处，可以使得偏置计算可以在执行期已经准备完毕。
-
-### 虚函数表的结构
-
-* 单继承虚函数的情况
-1. 代码证明函数地址
-2. 图解说明
-
-* 多基类继承虚函数的情况
-1. 代码证明函数地址
-2. 图解说明
-
-* 
-
-
-
-### 作用域运算符对继承类中的控制
-
-* 父子类间无虚函数
-
-* 父子类间有虚函数
-
-* 多继承
-
-
-
-
-
-
-
-
-# 啊啊我想重新写啦
-
-## 继承情况
-* 空类
-* 单继承无虚继承
-* 多继承无菱形
-* 多继承有菱形
-1. 无虚继承
-2. 虚继承
-
-虚继承影响虚函数和非虚函数的情况。
-
-## 研究内容
-* 存储大小
-* 调用函数
-* 虚表内容
-
-
+>   由此，可以得出CVDriveD1对象的虚函数表结构图~~图图图！~~
 
 
 
@@ -1007,17 +797,11 @@ test((Book )algoBook, (AlgorithmBook& )algoBook, (AlgorithmBook* )&algoBook)
 </p>
 
 
-
-## 指针访问数据与索引成员来访问数据的区别
----
-
-```C++
-class Empty
-{protected:  int a;};
-
-class DeriveE: public virtual Empty
-{}
-```
-
 * 当派生类的基类作为抽象类，并且其数据由基类继承而来时，指针访问数据上会有额外的间接导引的偏置计算，这种计算是拖慢到运行期才执行；但如果直接用静态地由本对象访问数据（就是用"."而不用"->"）,这种偏置计算在编译器就可以决定。
 
+
+
+## 参考
+1. *《深度探索C++对象模型》*
+2. *https://blog.csdn.net/SuLiJuan66/article/details/48897867*
+3. *http://blog.51cto.com/haoel/124595*

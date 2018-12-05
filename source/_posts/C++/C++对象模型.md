@@ -3,12 +3,13 @@ title:C++对象模型
 ---
 *深度探索C++对象模型*
 
-## C++对象模型的存放
+## the semantics of data
+---
+### 
 
-## 虚函数表
 
-## 模板存放
 
-## C++对象模型的空间结构及实例
-
+## the semantics of function
+---
+###
 
