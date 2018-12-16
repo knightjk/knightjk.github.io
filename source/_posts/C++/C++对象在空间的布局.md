@@ -1,5 +1,5 @@
 ---
-title:C++对象在空间中的布局情况
+title: C++对象在空间中的布局
 ---
 
 ## C++空类空间
@@ -47,12 +47,12 @@ class CDriveD0: public CDrive0B1, public CDrive0B2 {};  //size of CDrive0B2 is 8
 ```
 >   子类的数据空间被扩大一倍，那么子类到底拥有的是哪里的数据，是父类CDrive0B1和CDrive0B2的数据，还是祖先类CBase0与其中一个父类的数据？通过以下实验观察下：
 ```C++
-    CDriveD0 cdrived0;
+CDriveD0 cdrived0;
 
-    // cdrived0.baseData0 = 1;             //编译出错，非静态变量baseData0引起歧义
-    // cdrived0.Base0::baseData0 = 1;      //编译出错，非静态变量baseData0引起歧义
-    cdrived0.CDrive0B1::baseData0 = 1;
-    cdrived0.CDrive0B2::baseData0 = 2;
+// cdrived0.baseData0 = 1;             //编译出错，非静态变量baseData0引起歧义
+// cdrived0.Base0::baseData0 = 1;      //编译出错，非静态变量baseData0引起歧义
+cdrived0.CDrive0B1::baseData0 = 1;
+cdrived0.CDrive0B2::baseData0 = 2;
 ```
 > 通过gdb断点打印cdrived0信息如下：
 ```sh
@@ -237,9 +237,9 @@ public:
 >   CDriveD1属于菱形继承，分别从CDrive1B1和CDrive1B2继承了虚表指针，通过以下程序和gdb打印可以看出:
 
 ```C++
-    CDrive1B1 cdrive1b1;
-    CDrive1B2 cdrive1b2;
-    CDriveD1 cdrived ;
+CDrive1B1 cdrive1b1;
+CDrive1B2 cdrive1b2;
+CDriveD1 cdrived ;
 ```
 ```sh
 (gdb) p cdriveb1
@@ -291,12 +291,12 @@ $4 = {
 
 1. 单继承无虚函数与有虚函数：
 ```C++
-    CDrive1B1 cdrive1b1;
-    CBase1* pbase1;
+CDrive1B1 cdrive1b1;
+CBase1* pbase1;
 
-    pbase1 = &cdrive1b1;
-    pbase1->func1();    //输出"CBase1::func1"
-    pbase1->vfunc1();   //输出"CDrive1B1::vfunc1"
+pbase1 = &cdrive1b1;
+pbase1->func1();    //输出"CBase1::func1"
+pbase1->vfunc1();   //输出"CDrive1B1::vfunc1"
 ```
 >   gdb显示pbase1和cdrive1b1的内容：<br>
 ```sh
@@ -336,14 +336,14 @@ public:
 ```
 >   运行程序
 ```C++
-    // CDrive1B1 cdrive1b1;
-    CDrive1B3 cdrive1b3;
-    CBase1* pbase1;
+// CDrive1B1 cdrive1b1;
+CDrive1B3 cdrive1b3;
+CBase1* pbase1;
 
-    // pbase1 = &cdrive1b1;
-    pbase1 = &cdrive1b3;
-    pbase1->func1();    //输出"CBase1::func1"
-    pbase1->vfunc1();   //输出"CDrive1B3::vfunc1"
+// pbase1 = &cdrive1b1;
+pbase1 = &cdrive1b3;
+pbase1->func1();    //输出"CBase1::func1"
+pbase1->vfunc1();   //输出"CDrive1B3::vfunc1"
 ```
 >   gdb 打印cdrive1b3对象的内容和虚函数表指针<br>
 ```sh
@@ -396,7 +396,7 @@ class CDriveB1B2: public CBase1,public CBase2
 
 >   构造该对象，并用gdb打印该对象的内容：
 ```C++
-    CDriveB1B2 cdriveb1b2;      
+CDriveB1B2 cdriveb1b2;      
 ```
 ```sh
 (gdb) p cdriveb1b2
@@ -425,7 +425,7 @@ class CDriveD1S: public CDrive1B1, public CBase2
 };  //size of CDriveD1S is 8
 ```
 ```C++
-    CDriveD1S cdrive1s;     //
+CDriveD1S cdrive1s;     //
 ```
 >   CDriveD1S类的继承关系如下图所示~~补图~~<br>
 
@@ -706,12 +706,12 @@ protected:
 </p>
 
 ```C++
-    AlgorithmBook algoBook;
-    Book book = algoBook;       //父类局部
-    Book* pbook = &algoBook;    //父类指针
-    algoBook.reading();         //使用AlgorithmBook::reading
-    book.reading();             //使用Book::reading
-    pbook->reading();           //使用AlgorithmBook::reading
+AlgorithmBook algoBook;
+Book book = algoBook;       //父类局部
+Book* pbook = &algoBook;    //父类指针
+algoBook.reading();         //使用AlgorithmBook::reading
+book.reading();             //使用Book::reading
+pbook->reading();           //使用AlgorithmBook::reading
 ```
 <p style="text-indent:2em">
     可见父类的非指针变量(book)并没有调用到子类的方法(reading)，为什么会这样，考虑下以下两种情形
@@ -723,11 +723,11 @@ protected:
 </p>
 
 ```C++
-    void AlgorithmBook::reading()
-    {
-        cout<<"reading an algorithm book"<<endl;
-        cout<<"lesson count is "<<this->nTuiFunCnt<<endl;
-    }
+void AlgorithmBook::reading()
+{
+    cout<<"reading an algorithm book"<<endl;
+    cout<<"lesson count is "<<this->nTuiFunCnt<<endl;
+}
 ```
 
 <p style="text-indent:2em">
@@ -744,14 +744,14 @@ protected:
 </p>
 
 ```C++
-    Book book;
-    AlgorithmBook algoBook1 = book; //编译出错，提示不适配的转换
-    AlgorithmBook algoBook2;
-    AlgorithmBook* palgoBook;
-    
-    algoBook2 = book;               //编译出错，提示不适配的转换
-    palgoBook = &book;              //编译出错，提示指针类型不适配
-    palgoBook = dynamic_cast<AlgorithmBook*>(&book);    //编译警告，dynamic_cast的转换将不会成功。
+Book book;
+AlgorithmBook algoBook1 = book; //编译出错，提示不适配的转换
+AlgorithmBook algoBook2;
+AlgorithmBook* palgoBook;
+
+algoBook2 = book;               //编译出错，提示不适配的转换
+palgoBook = &book;              //编译出错，提示指针类型不适配
+palgoBook = dynamic_cast<AlgorithmBook*>(&book);    //编译警告，dynamic_cast的转换将不会成功。
 ```
 <p style="text-indent:2em">
     编译器这样处理的原因是，当父类对象要对子类对象赋值或复制时，对于那些子类有而父类没有的子类成员的处理是未知的（保持原样不就行了？这个坑待填）。而子类指针指向父类时，对于后续继续对该子类指针的使用很有可能使用到父类没有的成员，这样导致的结果也是未知的有危险的。
@@ -776,8 +776,8 @@ int test(Book book, Book& qbook, Book* pbook)
 </p>
 
 ```C++
-    AlgorithmBook algoBook;
-    test(algoBook,algoBook,&algoBook);
+AlgorithmBook algoBook;
+test(algoBook,algoBook,&algoBook);
 ```
 <p style="text-indent:2em">
     这时候，test函数实际的运行情况是这样：
@@ -795,9 +795,6 @@ test((Book )algoBook, (AlgorithmBook& )algoBook, (AlgorithmBook* )&algoBook)
 <p style="text-indent:2em">
     这种函数普通参数不能多态的规则也是遵循上述一样的规则 —— 空间最小化，否则，在多重继承和多重函数调用势必没有足够的资源（堆栈）能够支持其运行。
 </p>
-
-
-* 当派生类的基类作为抽象类，并且其数据由基类继承而来时，指针访问数据上会有额外的间接导引的偏置计算，这种计算是拖慢到运行期才执行；但如果直接用静态地由本对象访问数据（就是用"."而不用"->"）,这种偏置计算在编译器就可以决定。
 
 
 
