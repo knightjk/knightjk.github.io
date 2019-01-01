@@ -1,710 +1,1073 @@
 <!DOCTYPE html>
-<html>
-    <head><meta name="generator" content="Hexo 3.8.0">
-    <!-- Title -->
-    
-    <title>
-        balabala的事记
-    </title>
-    
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-    
-    <!-- Meta & INfo -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
-    <meta name="author" content="bamend">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-    
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="balabala的事记">
-    
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="balabala的事记">
-    <meta property="og:description" content="">
-    
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
-    <![endif]-->
-    
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-<!-- Theme Background -->
-
-    <style>
-        body{
-            background-color: #F5F5F5
-        }
-		
-        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-            background-color: #fff;
-        }
-		
-        #scheme-Paradox .MD-burger-layer {
-            background-color: #666;
-        }
-		
-        #scheme-Paradox .material-back{
-            color: #666;
-        }
-		
-        .material-layout .material-post>.material-nav,
-		.material-layout .material-index>.material-nav,
-        .material-nav a,
-        #scheme-Paradox .material-post_container .material-back{
-            color: #666;
-        }
-    </style>
 
 
-<!-- Fade Effect -->
 
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
+  
 
 
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hehesimida">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="the shape of bamend">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="the shape of bamend">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="the shape of bamend">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #00BCD4 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .fab{
-        background: #00BCD4 !important
-    }
-</style>
-	<script src="/js/jquery.min.js"></script>
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    
-</head>
-	
-	
-
-    <body id="scheme-Paradox">
-
-		
-        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-				
-			
-			
-            <!-- Main Container -->
-            <main class="material-layout__content" id="main">
-				
-                <!-- Top Anchor -->
-                <div id="top"></div>
-				
-				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
-				
-                <!-- Index Module -->
-<div class="material-index mdl-grid">
-	
-		<!-- Paradox Header -->
-		<!-- Daily pic -->
-<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
-    
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">Hi, nice to meet you</a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>bamend</strong>
-        </div>
-    </div>
-</div>
-
-		<!-- Blog info -->
-<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-	
-    <!-- Search -->
-	
-	<!-- Google -->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
-		</label>
-
-		<form id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-			<input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-			
-			<input type="hidden" name="sitesearch" value="http://yoursite.com">
-		</form>
-	</div>
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="">
-            <img src="/img/logo.png" alt="logo">
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>balabala的事记</strong>
-        </div>
-        <div class="section-spacer"></div>
-        
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-            
-            
-        </ul>
-        
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-            <a class="index_share-link" href="#">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Artículo RSS
-                </li>
-            </a>
-            <a class="index_share-link" href="https://twitter.com/intent/tweet?text=balabala的事记&url=http://yoursite.com/&via=bamend" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Compartir en Twitter
-                </li>
-            </a>
-            <a class="index_share-link" href="https://plus.google.com/share?url=http://yoursite.com/" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Compartir en Google+
-                </li>
-            </a>
-            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=balabala的事记&url=http://yoursite.com/&pic=&searchPic=false&style=simple" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Compartir en Weibo
-                </li>
-            </a>
-        </ul>
-    </div>
-</div>
-
-	
-    
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2018/12/01/C++/C++对象在空间的布局/">C++对象在空间中的布局</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          C++空...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/01/C++/C++对象在空间的布局/" target="_self">Sigue leyendo</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="bamend's avatar">
-            </div>
-            <div>
-                <strong>bamend</strong>
-                <span>Dec 01, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/2018/11/29/literature/快思慢想/">快思慢想</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-          《Thinking,Fast and Slow》—— Daniel Kahneman
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/11/29/literature/快思慢想/" target="_self">Sigue leyendo</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="bamend's avatar">
-            </div>
-            <div>
-                <strong>bamend</strong>
-                <span>Nov 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
-    </div>
-            
-</div>
-
-		
-		
-    
-    
-	
-		<script>
-    
-    var randomNum;
-    
-    var locatePost = $(".something-else").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
-    
+  };
 </script>
 
-	
 
-</div>
 
-				
-				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
+  <link rel="canonical" href="http://yoursite.com/">
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
 
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
 
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="bamend's avatar">
+
+
+  <title>the shape of bamend</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">the shape of bamend</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
-        <b class="caret"></b>
-    </a>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-        </ul>
-    </li>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
 
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             Casa
-        </a>
-    </li>
+      
+    </ul>
+  
 
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
-
-	
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             Archivo
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a>
-        </li></ul>
-    </li>
-
-    <!-- Divider -->
-    <li class="divider"></li>
+  
+</nav>
 
 
-    <!-- Pages  -->
-	
-	
-	
 
-    <!-- Article Numebr  -->
-    <li>
-        <a href="#">
-             Número de artículo
-             <span class="sidebar-badge">2</span>
-        </a>
-    </li>
-</ul>
+ </div>
+    </header>
 
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
 
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+  
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持。 :) 
--->
+  
+  
+  
 
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		tema - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/16/linux/errno与多线程变量安全/">
 
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bamend">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="the shape of bamend">
+    </span>
 
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
+    
+      <header class="post-header">
 
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
-
-
-</aside>
-
-				
-				
-				<!-- Floating Action Button -->
-<div class="fabs">
-    <a href="#top" class="fab toTop">
-        <i class="material-icons">expand_less</i>
-    </a>
-    
-    
-    
-    
-        <!-- Home Nav -->
-        <span class="page-number current">1</span>
-    
-    
-    <a href="#bottom" class="fab toBottom">
-        <i class="material-icons">keyboard_arrow_down</i>
-    </a>
-    
-    <a id="prime" class="fab">
-        <i class="material-icons prime-i-add">add</i>
-    </a>
-</div>
-				
-				<!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    <a href="https://twitter.com/twitter" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-        <span class="visuallyhidden">Twitter</span>
-    </button></a>
-    
-    
-    <!-- Facebook -->
-    
-    <a href="https://www.facebook.com/facebook" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
-        <span class="visuallyhidden">Facebook</span>
-    </button></a>
-    
-    
-    <!-- Google + -->
-    
-    <a href="https://www.google.com/" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-        <span class="visuallyhidden">Google Plus</span>
-    </button></a>
-    
-    
-    <!-- Weibo -->
-    
-    
-    
-    <!-- Instagram -->
-    
-    
-    
-    <!-- Tumblr -->
-    
-    
-    
-    <!-- Github -->
-    
-    
-</div>
-
-
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;balabala的事记</div>
-
-		<!-- Paradox Footer Right Section -->
-
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
-
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
-
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-			</div>
-		</div>
-	
-    
-</footer>
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-				<!-- Import File -->
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+                <a class="post-title-link" href="/2018/12/16/linux/errno与多线程变量安全/" itemprop="url">errno与多线程变量安全</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-16T17:23:38+08:00">
+                2018-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="errno作用"><a href="#errno作用" class="headerlink" title="errno作用"></a>errno作用</h2><hr>
+<ul>
+<li>errno的功能</li>
+</ul>
+<p>先man一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The value in errno is significant only when the return value of the call indicated an error (i.e., -1 from most system calls; -1 or NULL from most library functions); a function that succeeds is allowed to change errno.  The value of errno is never set to zero by any system  call or library function.</span><br><span class="line">For some system calls and library functions (e.g., getpriority(2)), -1 is a valid return on success.  In such cases, a successful return can be distinguished from an error return by setting errno to zero before the call, and then, if the call returns a status that indicates that an error may have occurred, checking to see if errno has a nonzero value.</span><br><span class="line"></span><br><span class="line">errno is defined by the ISO C standard to be a modifiable lvalue of type int, and must not be explicitly declared; errno may be a macro. errno is thread-local; setting it in one thread does not affect its value in any other thread.</span><br></pre></td></tr></table></figure></p>
+<p>就是说errno:</p>
+<ol>
+<li>用于提示API的具体出错信息。linux的API返回出错都是非0值，但更具体的定位出错需要errno值来辅助定位。</li>
+<li>errno一般不会被置0，然后只有API出错返回时errno才被设置，此时查询errno才有意义。</li>
+<li>errno可能是一个宏，被定义为线程局部的,即errno能够符合线程安全。</li>
+</ol>
+<ul>
+<li>errno的值定义</li>
+</ul>
+<p>errno的具体指定义在sysdeps/mach/hurd/bits/errno.h文件中，<del>有些长，这里先不列出来</del>可以通过gcc官网git找到对应的<a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/mach/hurd/bits/errno.h;h=8f2fbfd80ffd3dc3c765a7635203d69b1329ead4;hb=0c1719e65b2a5a80331d4f635612799f853b0479" target="_blank" rel="noopener">定义</a></p>
+<h2 id="全局变量在多线程的风险"><a href="#全局变量在多线程的风险" class="headerlink" title="全局变量在多线程的风险"></a>全局变量在多线程的风险</h2><hr>
+<p>已知 errno在使用时需要通过 <em>extern int errno</em>声明为全局量定义，那么在多线程情况下是怎样呢，已知全局量在运行内存中是存放在数据段中，而多线程只有占用各自的小部分栈段和CPU寄存器资源，其他资源是共享的，那么如果 <em>errno</em>定义为普通的全局量，那么在多线程中共用的全局量在线程各自改变时肯定会受影响，譬如，线程1和线程2同时操作出错，但由于errno是全局量，有可能线程1捕获到的出错返回errno的信息实际上是线程2的报错信息，这样定义errno是不科学的。伟大的gnu必然会考虑这种情况，所以把errno定义为线程安全性的。那么 errno如何实现线程安全，下面继续深入了解errno实现。</p>
+<h2 id="errno深入探索实现机制"><a href="#errno深入探索实现机制" class="headerlink" title="errno深入探索实现机制"></a>errno深入探索实现机制</h2><hr>
+<p>先查libc的源码，先用source insight查看extern int errno 关键字，可以找到如下的errno的可能的宏定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#/*sysdeps/unix/sysv/linux/riscv/sysdep.S*/</span><br><span class="line">#if IS_IN (libc)</span><br><span class="line"># define errno __libc_errno</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.h(stdlib)*/</span></span><br><span class="line"><span class="comment">/* The error code set by various library functions.  */</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> *__errno_location (<span class="keyword">void</span>) __THROW __attribute_const__;</span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> errno (*__errno_location ())</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.h(include)*/</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> rtld_errno;</span><br><span class="line"><span class="meta">#  <span class="meta-keyword">define</span> errno rtld_errno</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.c(csu)*/</span></span><br><span class="line">__thread <span class="keyword">int</span> errno;</span><br></pre></td></tr></table></figure>
+<p>那么，到底哪个是可能的errno的具体实现定义？这需要看程序中用到的errno的宏展开情况，编写以下测试代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//errno_test.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> errno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后只进行宏展开，不编译：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E errno_test.c</span><br></pre></td></tr></table></figure></p>
+<p>生成的结果：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 "errno_test.c"</span></span><br><span class="line"><span class="comment"># 1 "&lt;built-in&gt;"</span></span><br><span class="line"><span class="comment"># 1 "&lt;command-line&gt;"</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/stdc-predef.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "&lt;command-line&gt;" 2</span></span><br><span class="line"><span class="comment"># 1 "errno_test.c"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 28 "/usr/include/errno.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/features.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 367 "/usr/include/features.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 410 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 411 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 368 "/usr/include/features.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 391 "/usr/include/features.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 392 "/usr/include/features.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 29 "/usr/include/errno.h" 2 3 4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/bits/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 24 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/linux/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/asm-generic/errno.h" 1 3 4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/asm-generic/errno-base.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 5 "/usr/include/asm-generic/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/linux/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 25 "/usr/include/x86_64-linux-gnu/bits/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 50 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 50 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line">extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));</span><br><span class="line"><span class="comment"># 36 "/usr/include/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 58 "/usr/include/errno.h" 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 "errno_test.c" 2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5 "errno_test.c"</span></span><br><span class="line">extern int</span><br><span class="line"><span class="comment"># 5 "errno_test.c" 3 4</span></span><br><span class="line">          (*__errno_location ())</span><br><span class="line"><span class="comment"># 5 "errno_test.c"</span></span><br><span class="line">               ;</span><br><span class="line"></span><br><span class="line">int main(int argc, char* argv[])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，extern int errno 中的errno被展开成 (*<strong>errno_location ())，再深入探索</strong>errno_location的定义:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* The error code set by various library functions.  */</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> *__errno_location (<span class="keyword">void</span>) __THROW __attribute_const__;</span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> errno (*__errno_location ())</span></span><br></pre></td></tr></table></figure></p>
+<p>往下追踪发现有两个定义，一个弱引用函数一个普通全局函数，先看弱引用函数定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> IS_IN (rtld)</span></span><br><span class="line"><span class="comment">/*sysdeps/mach/hurd/Errno-loc.c*/</span></span><br><span class="line"><span class="comment">/* rtld can not access TLS too early, thus rtld_errno.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   Instead of making __open/__close pass errno from TLS to rtld_errno, simply</span></span><br><span class="line"><span class="comment">   use a weak __errno_location using rtld_errno, which will be overriden by the</span></span><br><span class="line"><span class="comment">   libc definition.  */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> rtld_errno;</span><br><span class="line"><span class="keyword">int</span> * weak_function</span><br><span class="line">__errno_location (<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> &amp;rtld_errno;</span><br><span class="line">&#125;</span><br><span class="line">libc_hidden_weak (__errno_location)</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../../csu/errno-loc.c"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这里说明libc的 <em>__errno_location</em>函数被定义时会使用libc的而忽略弱引用的函数，弱引用先返回的是rtld_errno这个静态量的地址。<br><br>再来看看普通的<em>__errno_location</em>函数定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*Errno-loc.c(csu)*/</span><br><span class="line">int *</span><br><span class="line">__errno_location (void)</span><br><span class="line">&#123;</span><br><span class="line">  return &amp;errno;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，最后返回的还是errno，那么这个errno到底是什么量？先用排除法排除以上的宏定义，得到errno可能是如下定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.c(csu)*/</span></span><br><span class="line">__thread <span class="keyword">int</span> errno;</span><br></pre></td></tr></table></figure></p>
+<p>这个errno在定义时加上了一个 <em>__thread</em>，这个<strong>thread是什么？这个是线程局部存储的关键字，而且这个关键字需要编译器作为支撑的，<a href="https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html" target="_blank" rel="noopener">这里</a>是gcc.gnu对</strong>thread关键字的说明:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Thread-local storage (TLS) is a mechanism by which variables are allocated such that there is one instance of the variable per extant thread. The run-time model GCC uses to implement this originates in the IA-64 processor-specific ABI, but has since been migrated to other processors as well. It requires significant support from the linker (ld), dynamic linker (ld.so), and system libraries (libc.so and libpthread.so), so it is not available everywhere.</span><br><span class="line"></span><br><span class="line">At the user level, the extension is visible with a new storage class keyword: __thread. For example:</span><br><span class="line"></span><br><span class="line">     __thread int i;</span><br><span class="line">     extern __thread struct state s;</span><br><span class="line">     static __thread char *p;</span><br><span class="line">The __thread specifier may be used alone, with the extern or static specifiers, but with no other storage class specifier. When used with extern or static, __thread must appear immediately after the other storage class specifier.</span><br><span class="line"></span><br><span class="line">The __thread specifier may be applied to any global, file-scoped static, function-scoped static, or static data member of a class. It may not be applied to block-scoped automatic or non-static data member.</span><br><span class="line"></span><br><span class="line">When the address-of operator is applied to a thread-local variable, it is evaluated at run-time and returns the address of the current thread&apos;s instance of that variable. An address so obtained may be used by any thread. When a thread terminates, any pointers to thread-local variables in that thread become invalid.</span><br><span class="line"></span><br><span class="line">No static initialization may refer to the address of a thread-local variable.</span><br><span class="line"></span><br><span class="line">In C++, if an initializer is present for a thread-local variable, it must be a constant-expression, as defined in 5.19.2 of the ANSI/ISO C++ standard.</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，对于__thread关键字：</p>
+<ol>
+<li>使被修饰的变量在每个现存的线程有各自的一个变量实例</li>
+<li>一开始gcc用于IA-64处理器，后面其他处理器也有，但不能保证所有处理器和编译其可用</li>
+<li>可以单独使用，与外部或静态说明符一起使用，但不与其他存储类说明符一起使用。它可能不适用于块作用域的自动或非静态数据成员。</li>
+<li>当线程终止时，该线程中任何指向线程本地变量的指针都将无效。</li>
+</ol>
+<p>更深入的线程本地存储可以看(<del>鄙人还没有看过的</del>)<a href="https://akkadia.org/drepper/tls.pdf" target="_blank" rel="noopener">这篇文章</a>。</p>
+<h2 id="thread的使用"><a href="#thread的使用" class="headerlink" title="__thread的使用"></a>__thread的使用</h2><hr>
+<p>从深入探索errno可以学到了<strong>thread定义的变量是线程安全的，那么把</strong>thread放在我们自己程序中来试验下是否真的是这样，首选，编写一段测试程序：<br><br>头文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __DYNAMIC_LINK_VARIABLE_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __DYNAMIC_LINK_VARIABLE_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span>* data_point;</span><br><span class="line">    <span class="keyword">size_t</span> size;</span><br><span class="line">&#125;<span class="keyword">data_area_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span>;  <span class="comment">//用于创建data_area_t结构体节点</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span>; <span class="comment">//用于更改数据</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span>; <span class="comment">//用于打印数据</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span>; <span class="comment">//用于删除节点</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>目标使用程序如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//call_dynamic_link.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"><span class="comment">//gcc call_dynamic_link.c -m32 -g -o call_dynamic -pthread -ldynamic -L.  -Wl,-rpath,./</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">test_thread1</span><span class="params">(<span class="keyword">void</span> *arg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    sleep(<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x22</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line"></span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread1 create datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread1 modified datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">test_thread2</span><span class="params">(<span class="keyword">void</span> *arg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    sleep(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x33</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line"></span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread2 create datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread2 modified datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="comment">/*需要以下延迟来延长thread2的生存周期，否则如果thread2比thread1先退出，</span></span><br><span class="line"><span class="comment">    根据这个程序条件那么thread1将会利用thread2使用过的空间,也就是说，</span></span><br><span class="line"><span class="comment">    如果thread1和thread2有先后运行完成的关系，就会导致thread1和thread2开辟的同一段地址的空间</span></span><br><span class="line"><span class="comment">    这是free函数的机制，free并不真正把空间释放，之前的空间仍然有保留*/</span></span><br><span class="line">    sleep(<span class="number">2</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">pthread_t</span> thread1;</span><br><span class="line">    <span class="keyword">pthread_t</span> thread2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x44</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="comment">//create thread1</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"thread1 = 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)thread1);</span><br><span class="line">    pthread_create(&amp;thread1, <span class="literal">NULL</span>, test_thread1, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">//create thread2</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"thread2 = 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)thread2);</span><br><span class="line">    pthread_create(&amp;thread2, <span class="literal">NULL</span>, test_thread2, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">//thread join</span></span><br><span class="line">    pthread_join(thread1, (<span class="keyword">void</span>**)&amp;data);</span><br><span class="line">    <span class="comment">//thread join</span></span><br><span class="line">    pthread_join(thread2, (<span class="keyword">void</span>**)&amp;data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就是在创建两个线程之前主线程先改变和打印设置的量，然后线程thread2先再次创建和改变打印设置的量，中间停顿2s，在此期间thread1创建并改变和打印设置的量，然后thread1结束，thread2停顿2s后再次打印，具体的打印都会把设置量的值和地址体现出来。<br><br>接下来先再证实一下普通全局变量在多线程的使用情况，以下是变量的定义文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable.c</span></span><br><span class="line"><span class="comment">//test normal global data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span></span><br><span class="line"><span class="keyword">data_area_t</span> global_data = &#123;.data_point = <span class="literal">NULL</span>, .size = <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    global_data.data_point = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*size);</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    global_data.size = size;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(size &gt; global_data.size)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"modified data address is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)&amp;global_data);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memcpy</span>(global_data.data_point, data, size*(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//打印线程ID和变量的地址</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pthread = 0x%x, echo data address is 0x%x, size is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)pthread,(<span class="keyword">uint32_t</span>)&amp;global_data,global_data.size);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; global_data.size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0x%x "</span>,global_data.data_point[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">free</span>(global_data.data_point);</span><br><span class="line">    global_data.size = <span class="number">0</span>;</span><br><span class="line">    global_data.data_point = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread <span class="comment">#生成libdynamic.so</span></span><br><span class="line">gcc call_dynamic_link.c -m32 -g -o call_dynamic -pthread -ldynamic -L.  -Wl,-rpath,./</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">pthread = 0xf7d51700, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d5fdc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7d50b40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7d50b40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>结果显示普通全局量 <em>global_data</em>的地址在多线程打印出来是一个地址（都为0xf7f43028），由此可见普通全局变量在多线程是不安全的，这个在上面有提到，初始化的全局变量在初始化的数据段中，然鹅多线程会共用这个初始化的数据段。<br><br>那么只将全局量用 <em>__thread</em>修饰后会怎样，只更改的上述代码，将global_data在定义时用 <em>__thread</em>修饰：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__thread <span class="keyword">data_area_t</span> global_data = &#123;.data_point = <span class="literal">NULL</span>, .size = <span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>然后编译<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread #生成libdynamic.so</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">pthread = 0xf7d3a700, <span class="built_in">echo</span> data address is 0xf7d3a6f8, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7d3a6f8</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d48dc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7538b38</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7d39b40, <span class="built_in">echo</span> data address is 0xf7d39b38, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7d39b38</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7d39b40, <span class="built_in">echo</span> data address is 0xf7d39b38, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>结果显示，在不同线程中global_data的存放地址是不同的，主线程的global_data地址在0xf7d3a6f8，线程1的global_data地址在0xf7d39b38，线程2的global_data地址在0xf7538b38。从这里可以看出，__thread关键字为每个线程开辟的global_data的地址是不同的。那么此时的global_data还是我们所谓的全局量吗？它存放的位置在哪里，是仍然存放在初始化的数据段，还是放在堆、栈或者其他什么地方呢？可以通过readelf命令查看global_data的信息。<br><br>命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -a libdynamic.so</span><br></pre></td></tr></table></figure></p>
+<p>先看没有__thread修饰的情况，打印太多，只看需要看的部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol table &apos;.symtab&apos; contains 72 entries:</span><br><span class="line">   Num:    Value  Size Type    Bind   Vis      Ndx Name</span><br><span class="line">   .....</span><br><span class="line">   59: 00002028     8 OBJECT  GLOBAL DEFAULT   24 global_data</span><br><span class="line">   .....</span><br></pre></td></tr></table></figure></p>
+<p>可见在没有<strong>thread修饰情况下，global_data为OBJECT类型，放置在全局。<br><br>然后再看有</strong>thread修饰的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol table &apos;.symtab&apos; contains 72 entries:</span><br><span class="line">   Num:    Value  Size Type    Bind   Vis      Ndx Name</span><br><span class="line">   .....</span><br><span class="line">   61: 00000000     8 TLS     GLOBAL DEFAULT   17 global_data</span><br><span class="line">   .....</span><br></pre></td></tr></table></figure></p>
+<p>也就是说在<strong>thread修饰后，该变量仍然是全局性的，这说明</strong>thread并不改变变量的存放位置，只是把类型声明为TLS类型。</p>
+<h2 id="另一种方法实现变量线程安全"><a href="#另一种方法实现变量线程安全" class="headerlink" title="另一种方法实现变量线程安全"></a>另一种方法实现变量线程安全</h2><hr>
+<p>其实就是以下4个函数，利用key值来锁定分配的内存的位置信息，然后达到各个线程通过访问pthread_getspecific函数的方式来间接对堆的各个不同空间进行访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int pthread_key_create(pthread_key_t *key, void (*destr_function) (void *));</span><br><span class="line"></span><br><span class="line">int pthread_key_delete(pthread_key_t key);</span><br><span class="line"></span><br><span class="line">int pthread_setspecific(pthread_key_t key, const void *pointer);</span><br><span class="line"></span><br><span class="line">void * pthread_getspecific(pthread_key_t key);</span><br></pre></td></tr></table></figure>
+<p>man手册上有一个简单的使用栗子（在此之前，可能需要安装一下pthread的man手册，在ubuntu上用sudo apt-get install glibc-doc和sudo apt-get install manpages-posix manpages-posix-devl来安装关于pthread的man手册）：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Key for the thread-specific buffer */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_key_t</span> buffer_key;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Once-only initialisation of the key */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_once_t</span> buffer_key_once = PTHREAD_ONCE_INIT;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buffer_alloc</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  pthread_once(&amp;buffer_key_once, buffer_key_alloc);</span><br><span class="line">  pthread_setspecific(buffer_key, <span class="built_in">malloc</span>(<span class="number">100</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Return the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">get_buffer</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">char</span> *) pthread_getspecific(buffer_key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the key */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_key_alloc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  pthread_key_create(&amp;buffer_key, buffer_destroy);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Free the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_destroy</span><span class="params">(<span class="keyword">void</span> * buf)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">free</span>(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然在这个过程中还需要利用pthread_once函数来锁定全局的key只用初始化一次。接下来编写上述生成libdynamic.so的另一个实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable2.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//gcc dynamic_link_variable2.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Key for the thread-specific buffer */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_key_t</span> buffer_key;</span><br><span class="line"><span class="comment">/* Once-only initialisation of the key */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_once_t</span> buffer_key_once = PTHREAD_ONCE_INIT;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Free the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_destroy</span><span class="params">(<span class="keyword">void</span> * buf)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>*)buf;</span><br><span class="line">    <span class="built_in">free</span>(data_area-&gt;data_point);</span><br><span class="line">    <span class="built_in">free</span>(data_area);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the key */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_key_alloc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pthread_key_create(&amp;buffer_key, buffer_destroy);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"--------------once process--------------\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">buffer_alloc</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area;</span><br><span class="line">    pthread_once(&amp;buffer_key_once, buffer_key_alloc);   <span class="comment">//only execute once</span></span><br><span class="line"></span><br><span class="line">    data_area = (<span class="keyword">data_area_t</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">data_area_t</span>));</span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    data_area-&gt;data_point = (<span class="keyword">int</span>* )<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * size);</span><br><span class="line">    <span class="keyword">if</span>(data_area-&gt;data_point == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">free</span>(data_area);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    data_area-&gt;size = size;</span><br><span class="line"></span><br><span class="line">    pthread_setspecific(buffer_key, data_area);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> buffer_alloc(size);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>* )pthread_getspecific(buffer_key);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(size &gt; data_area-&gt;size)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"modified data address is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)data_area);</span><br><span class="line">    <span class="built_in">memcpy</span>(data_area-&gt;data_point, data, size*(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>* )pthread_getspecific(buffer_key);</span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pthread = 0x%x, echo data address is 0x%x,size is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)pthread, (<span class="keyword">uint32_t</span>)data_area,data_area-&gt;size);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; data_area-&gt;size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0x%x "</span>,data_area-&gt;data_point[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable2.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span><br></pre></td></tr></table></figure></p>
+<p>同样运行call_dynamic：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">--------------once process--------------</span><br><span class="line">pthread = 0xf7cfe700, <span class="built_in">echo</span> data address is 0x81d1410,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0x81d1410</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d0cdc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf6b00470</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7cfdb40, <span class="built_in">echo</span> data address is 0xf6900470,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf6900470</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7cfdb40, <span class="built_in">echo</span> data address is 0xf6900470,size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>实现的效果与__thread的修饰符差不多，但是，通过pthread_setspecific系列函数是用于定义指针指向对于的内存空间的一个“别名”，然后在各个线程中各自指定使用。</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><hr>
+<ol>
+<li>__thread到底在gcc内部如何实现变量的线程安全?</li>
+<li>pthread_setspecific系列函数如何实现在各个不同线程的键(key)-值对应机制？</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<ol>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html</a></li>
+<li><a href="https://blog.csdn.net/JS072110/article/details/44855565" target="_blank" rel="noopener">https://blog.csdn.net/JS072110/article/details/44855565</a></li>
+</ol>
+<p><em>[未完持续…]</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/C++/C++对象在空间的布局/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bamend">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="the shape of bamend">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/01/C++/C++对象在空间的布局/" itemprop="url">C++对象在空间中的布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T10:31:55+08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="C-空类空间"><a href="#C-空类空间" class="headerlink" title="C++空类空间"></a>C++空类空间</h2><hr>
+<ul>
+<li><p>C中的struct空结构体</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SEmpty</span>&#123;</span>&#125;;             <span class="comment">//size of SEmpty is 0;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SEmpty</span> <span class="title">sEmpty</span>;</span>         <span class="comment">//size of sEmpty is 0;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>C++中的class与struct空类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CEmpty</span>&#123;</span>&#125;;              <span class="comment">//size of CEmpty is 1</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SEmpty</span>&#123;</span>&#125;;             <span class="comment">//size of SEmpty is 1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>   这是因为C++标准中不允许对象的大小为0，所以用一个字节来区分空类，使得C++类在实例化时得以在内存中配置唯一的地址，但子类继承空类并不会把该字节长度加入子类中：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDeriveE1</span>:</span><span class="keyword">public</span> CEmpty &#123; &#125;;                  <span class="comment">//size of CDeriveE1 is 1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDeriveE2</span>:</span><span class="keyword">public</span> CEmpty &#123;<span class="keyword">public</span>: <span class="keyword">int</span> a; &#125;;    <span class="comment">//size of CDeriveE2 is 4 (32 bit machine -m32)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDeriveE3</span>:</span><span class="keyword">public</span> CEmpty &#123;<span class="keyword">public</span>: <span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span>&#123;&#125; ; &#125;;    <span class="comment">//size of CDeriveE3 is 1 (32 bit machine -m32),成员函数不占空间</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>   CDeriveE2中有成员变量，并且该成员变量可以在类实例化时可以分配内存唯一地址，这样，那个一字节的空间会被有些编译器(现在用的g++)替换成该成员变量的空间.</p>
+</blockquote>
+<h2 id="C-数据类空间"><a href="#C-数据类空间" class="headerlink" title="C++数据类空间"></a>C++数据类空间</h2><hr>
+<ul>
+<li><p>单个数据类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase0</span>                </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> baseData0;</span><br><span class="line">&#125;; <span class="comment">//size of CBase0 is 4  ，baseData0占4字节</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承数据类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive0B1</span>:</span> <span class="keyword">public</span> CBase0 &#123; &#125;; <span class="comment">//size of CDrive0B1 is 4</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive0B2</span>:</span> <span class="keyword">public</span> CBase0 &#123; &#125;; <span class="comment">//size of CDrive0B2 is 4</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>  很显然，这就是数据继承的意义，子类数据继承父类数据而不用开辟新的空间而导致浪费，那么以下这种情况会怎样。</p>
+<ul>
+<li>菱形多继承<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDriveD0</span>:</span> <span class="keyword">public</span> CDrive0B1, <span class="keyword">public</span> CDrive0B2 &#123;&#125;;  <span class="comment">//size of CDrive0B2 is 8</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  子类的数据空间被扩大一倍，那么子类到底拥有的是哪里的数据，是父类CDrive0B1和CDrive0B2的数据，还是祖先类CBase0与其中一个父类的数据？通过以下实验观察下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CDriveD0 cdrived0;</span><br><span class="line"></span><br><span class="line"><span class="comment">// cdrived0.baseData0 = 1;             //编译出错，非静态变量baseData0引起歧义</span></span><br><span class="line"><span class="comment">// cdrived0.Base0::baseData0 = 1;      //编译出错，非静态变量baseData0引起歧义</span></span><br><span class="line">cdrived0.CDrive0B1::baseData0 = <span class="number">1</span>;</span><br><span class="line">cdrived0.CDrive0B2::baseData0 = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>通过gdb断点打印cdrived0信息如下：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) <span class="built_in">print</span> cdrived0</span><br><span class="line"><span class="variable">$1</span> = &#123;&lt;CDrive0B1&gt; = &#123;&lt;CBase0&gt; = &#123;baseData0 = 1&#125;, &lt;No data fields&gt;&#125;, &lt;CDrive0B2&gt; = &#123;&lt;CBase0&gt; = &#123;baseData0 = 2&#125;, &lt;No data fields&gt;&#125;, &lt;No data fields&gt;&#125;</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>通过该现象说明，对于菱形继承的数据区，子类并没有单独保留祖先类的数据，但父类都继承自祖先类数据，在子类中会对多个父类的数据都保留一份。而如果子类只保留祖先类的数据，两个父类是相对不同的类却在子类中没能被继承数据，这样相当于两个不同的父类共用一套数据，那么在构造该子类进行初始化时，到底该由哪个父类的构造函数进行该数据的初始化就成为了矛盾；如果子类把父类和祖先类的数据都保留下来，那么，对于父类来说，祖先类的数据与父类不同，这也不符合继承规则，这种情况与一个子类非菱形继承三个父类的情况的区分难以辨识（<del>没错这就是强行为编译器辩解</del>）。唯一能够保持语义的是父类双亲各自保留数据，祖先类数据由双亲各自表现。</p>
+</blockquote>
+<h2 id="虚函数表"><a href="#虚函数表" class="headerlink" title="虚函数表"></a>虚函数表</h2><hr>
+<h3 id="有无virtual关键字的区别"><a href="#有无virtual关键字的区别" class="headerlink" title="有无virtual关键字的区别"></a>有无virtual关键字的区别</h3><ul>
+<li>类的大小<p style="text-indent:2em"><br>  继续研究类中有虚继承和类中有虚函数的情况：<br></p>
+
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基类：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase1::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">base1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase1::base1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vb1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase1::vb1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;  <span class="comment">//size of CBase1 is 4</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>没有virtual的子类单继承时</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDeriveE1</span>:</span><span class="keyword">public</span> CEmpty &#123; &#125;;          <span class="comment">//size of CDeriveE1 is 1;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>有virtual的子类单继承时<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CVDeriveE1</span>:</span><span class="keyword">public</span> <span class="keyword">virtual</span> CEmpty &#123; &#125;;     <span class="comment">//size of CVDeriveE1 is 4 (-m32)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive</span>:</span> <span class="keyword">public</span> CBase1 &#123; &#125;;                <span class="comment">//size of CDrive is 4 (-m32)</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>  这里分为两种情况，一种是虚继承，即在定义时指定父类派生到子类的方式声明父类为子类的虚类，如CVDeriveE1虚继承CEmpty那样。另一种为普通继承，但继承的父类里面有虚函数，如CDrive继承CBase1那样，这两种方式都会使得子类在原来没有虚表指针的情况下多一个虚表指针，区别在于，一方面，从子类的大小上说，虚继承只是在子类中指定有这么一个指向虚表的指针，如果子类原来就有虚表指针，那么虚继承不会再给子类多分配一个虚表指针的空间，如下定义所示：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CVDrive</span>:</span> <span class="keyword">public</span> <span class="keyword">virtual</span> CBase1 &#123; &#125;;                <span class="comment">//size of CVDrive is 4 (-m32)</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  这种情况放在虚继承多个父类也一样，只要其中一个父类有虚函数，，或者所有父类都采用次虚继承方式（即使所有父类都没有虚函数），虚继承方式不会再产生新叠加的虚表指针。<br><br>  另一方面，从虚继承本身的意义上说，虚继承时的虚函数表指针用于归总父类中相同的虚函数，这种情况常用于菱形继承，但菱形继承也不会对虚继承多分配一个虚表指针空间，这个后面在进行说明（没有虚函数的菱形继承，有虚函数的菱形继承，没有虚函数有虚继承的菱形继承，有虚函数有虚继承的菱形继承的情况）。</p>
+</blockquote>
+<ol start="3">
+<li>有继承多个virtual的基类时</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase2::func2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">base1func2</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase2::base1func2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc2</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CBase2::vfunc2"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive1B1</span>:</span> <span class="keyword">public</span>  CBase1</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B1::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdriveb1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B1::cdriveb1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B2::v1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;  <span class="comment">//size of CDrive1B1 is 4</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive1B2</span>:</span> <span class="keyword">public</span>  CBase1 </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B2::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdriveb2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B2::cdriveb2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B2::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B2::v2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;         <span class="comment">//size of CDrive1B2 is 4</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDriveD1</span>:</span> <span class="keyword">public</span> CDrive1B1,<span class="keyword">public</span> CDrive1B2</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdrivedfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::cdrivedfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::v1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::v2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vd1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::vd1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;      <span class="comment">//size of CDriveD1 is 8</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDriveD1E</span>:</span> <span class="keyword">public</span> CDrive1B1, <span class="keyword">public</span> <span class="keyword">virtual</span> CDeriveE1 </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDriveD1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;        <span class="comment">//size of CDriveD1E is 4，这里说明虚继承不会在已有虚指针上再多加一个</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  CDriveD1属于菱形继承，分别从CDrive1B1和CDrive1B2继承了虚表指针，通过以下程序和gdb打印可以看出:</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CDrive1B1 cdrive1b1;</span><br><span class="line">CDrive1B2 cdrive1b2;</span><br><span class="line">CDriveD1 cdrived ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p cdriveb1</span><br><span class="line"><span class="variable">$2</span> = &#123;</span><br><span class="line">    &lt;CBase1&gt; = &#123;</span><br><span class="line">        _vptr.CBase1 = 0x8049550 &lt;vtable <span class="keyword">for</span> CDrive1B1+8&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">        &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br><span class="line">(gdb) p cdriveb2</span><br><span class="line"><span class="variable">$3</span> = &#123;</span><br><span class="line">    &lt;CBase1&gt; = &#123;</span><br><span class="line">        _vptr.CBase1 = 0x804953c &lt;vtable <span class="keyword">for</span> CDrive1B2+8&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">        &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br><span class="line">(gdb) p cdrived</span><br><span class="line"><span class="variable">$4</span> = &#123;</span><br><span class="line">    &lt;CDrive1B1&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            _vptr.CBase1 = 0x80494f8 &lt;vtable <span class="keyword">for</span> CDriveD1+8&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">    &lt;CDrive1B2&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            _vptr.CBase1 = 0x8049514 &lt;vtable <span class="keyword">for</span> CDriveD1+36&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">    &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  在cdrived存在两个虚函数表指针，其中分别是从父类CDrive1B1和CDrive1B2获取，这说明对于多继承情况下，子类对象会对每个父类多分配出对应虚函数表指针的空间，所以cdrived的空间大小为两个虚表指针所占空间之和；而父类中的虚函数表指针又是从祖父类中获取。</p>
+</blockquote>
+<h3 id="深入虚函数和虚继承"><a href="#深入虚函数和虚继承" class="headerlink" title="深入虚函数和虚继承"></a>深入虚函数和虚继承</h3><ul>
+<li>虚函数的作用</li>
+</ul>
+<blockquote>
+<p>  以下摘要自维基百科：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在面向对象程序设计领域，C++、Object Pascal 等语言中有虚函数（英语：virtual function）或虚方法（英语：virtual method）的概念。这种函数或方法可以被子类继承和覆盖，通常使用动态调度实现。这一概念是面向对象程序设计中（运行时）多态的重要组成部分。简言之，虚函数可以给出目标函数的定义，但该目标的具体指向在编译期可能无法确定。</span><br><span class="line">在面向对象程序设计中，派生类继承自基类。使用指针或引用访问派生类对象时，指针或引用本身所指向的类型可以是基类而不是派生类。</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  意思很明显，也就是说虚函数能够提供在子类重写父类方法后，父类指针或引用能够在运行期动态选择运行子类对象的函数。继续上面的类定义，给出对应示例：</p>
+</blockquote>
+<ol>
+<li>单继承无虚函数与有虚函数：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CDrive1B1 cdrive1b1;</span><br><span class="line">CBase1* pbase1;</span><br><span class="line"></span><br><span class="line">pbase1 = &amp;cdrive1b1;</span><br><span class="line">pbase1-&gt;func1();    <span class="comment">//输出"CBase1::func1"</span></span><br><span class="line">pbase1-&gt;vfunc1();   <span class="comment">//输出"CDrive1B1::vfunc1"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>  gdb显示pbase1和cdrive1b1的内容：<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p *pbase1</span><br><span class="line"><span class="variable">$2</span> = &#123;_vptr.CBase1 = 0x8049550 &lt;vtable <span class="keyword">for</span> CDrive1B1+8&gt;&#125;</span><br><span class="line">(gdb) p cdrive1b1</span><br><span class="line"><span class="variable">$3</span> = &#123;&lt;CBase1&gt; = &#123;_vptr.CBase1 = 0x8049550 &lt;vtable <span class="keyword">for</span> CDrive1B1+8&gt;&#125;, &lt;No data fields&gt;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  gdb显示的pbase1和cdrive1b1内容只是虚表指针，还需要虚表指针内更深层次的信息,在此之前，先确定虚表指针在对象中存储的位置，由于对象cdrive1b1及其父类没有数据成员，为了充分验证，新追加数据类如下(<del>要补图呀，补CDrive1B3的关系图！</del>)：<br><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDrive1B3</span>:</span> <span class="keyword">public</span>  CBase1 </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B3::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdriveb2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B3::cdriveb2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B3::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CDrive1B3::v2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cdriveData;</span><br><span class="line">&#125;;         <span class="comment">//size of CDrive1B3 is 8</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  运行程序<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CDrive1B1 cdrive1b1;</span></span><br><span class="line">CDrive1B3 cdrive1b3;</span><br><span class="line">CBase1* pbase1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// pbase1 = &amp;cdrive1b1;</span></span><br><span class="line">pbase1 = &amp;cdrive1b3;</span><br><span class="line">pbase1-&gt;func1();    <span class="comment">//输出"CBase1::func1"</span></span><br><span class="line">pbase1-&gt;vfunc1();   <span class="comment">//输出"CDrive1B3::vfunc1"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  gdb 打印cdrive1b3对象的内容和虚函数表指针<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p cdrive1b3</span><br><span class="line"><span class="variable">$1</span> = &#123;&lt;CBase1&gt; = &#123;_vptr.CBase1 = 0x80496b8 &lt;vtable <span class="keyword">for</span> CDrive1B3+8&gt;&#125;, cdriveData = 1&#125;</span><br><span class="line">(gdb) p *pbase1</span><br><span class="line"><span class="variable">$2</span> = &#123;_vptr.CBase1 = 0x80496b8 &lt;vtable <span class="keyword">for</span> CDrive1B3+8&gt;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  继续打印cdrive1b3存储的信息<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p/x (&amp;((int)cdrive1b3))</span><br><span class="line"><span class="variable">$3</span> = 0xffffce0c</span><br><span class="line">(gdb) p/x (&amp;((int)cdrive1b3))+1</span><br><span class="line"><span class="variable">$4</span> = 0xffffce10</span><br><span class="line">(gdb) p/x *((&amp;((int)cdrive1b3))+0)</span><br><span class="line"><span class="variable">$5</span> = 0x80496b8</span><br><span class="line">(gdb) p/x *((&amp;((int)cdrive1b3))+1)</span><br><span class="line"><span class="variable">$6</span> = 0x1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  由此可知，cdrive1b3存放的第一个数据是虚表指针（值为0x8049604），第二个数据是数据成员cdriveData的值（值为0x01），也就是说，虚表指正存在对象的前面的位置中，至少目前g++是这样处理虚表指针的位置。那么，虚表指针0x80496b8指向的内容存放的是什么？继续打印虚表指针指向的内容：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p (long*)*(long*)0x80496b8</span><br><span class="line"><span class="variable">$7</span> = (long *) 0x8048ec6 &lt;CDrive1B3::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80496b8 + 1)</span><br><span class="line"><span class="variable">$8</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80496b8 + 2)</span><br><span class="line"><span class="variable">$9</span> = (long *) 0x8048ef6 &lt;CDrive1B3::v2func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80496b8 + 3)</span><br><span class="line"><span class="variable">$10</span> = (long *) 0x0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  继续换一种方式确定对象中虚函数的存储位置：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p cdrive1b3.vfunc1</span><br><span class="line"><span class="variable">$19</span> = &#123;void (CDrive1B3 * const)&#125; 0x8048ec6 &lt;CDrive1B3::vfunc1()&gt;</span><br><span class="line">(gdb) p cdrive1b3.vb1func1</span><br><span class="line"><span class="variable">$20</span> = &#123;void (CBase1 * const)&#125; 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p cdrive1b3.v2func1</span><br><span class="line"><span class="variable">$21</span> = &#123;void (CDrive1B3 * const)&#125; 0x8048ef6 &lt;CDrive1B3::v2func1()&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  cdrive1b3虚表指针存放的是该类中所有虚函数的指针，如图所示（<del>要补图呀</del>）。从结果可以看出，如果子类重写父类虚函数，那么子类对象调用的是子类的虚函数，同样，即使父类指针指向子类对象，父类指针也仍然会用子类重写的虚函数。</p>
+</blockquote>
+<ol start="2">
+<li>多继承中的虚函数<blockquote>
+<p>  接下来观察继承多个有虚函数的父类的情况，先定义一个简单多继承非多次继承的子类，分析之：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDriveB1B2</span>:</span> <span class="keyword">public</span> CBase1,<span class="keyword">public</span> CBase2</span><br><span class="line">&#123;</span><br><span class="line">&#125;;<span class="comment">//size of CDriveB1B2 is 8</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>  该多继承类结构如下图所示<del>补图呀</del><br></p>
+</blockquote>
+<blockquote>
+<p>  构造该对象，并用gdb打印该对象的内容：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CDriveB1B2 cdriveb1b2;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p cdriveb1b2</span><br><span class="line"><span class="variable">$1</span> = &#123;&lt;CBase1&gt; = &#123;_vptr.CBase1 = 0x804953c &lt;vtable <span class="keyword">for</span> CDriveB1B2+8&gt;&#125;, &lt;CBase2&gt; = &#123;</span><br><span class="line">    _vptr.CBase2 = 0x804954c &lt;vtable <span class="keyword">for</span> CDriveB1B2+24&gt;&#125;, &lt;No data fields&gt;&#125;</span><br><span class="line">(gdb) p (long*)*((long*)0x804953c + 1)</span><br><span class="line"><span class="variable">$2</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x804953c + 0)</span><br><span class="line"><span class="variable">$3</span> = (long *) 0x8048d08 &lt;CBase1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x804953c + 1)</span><br><span class="line"><span class="variable">$4</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x804953c + 2)</span><br><span class="line"><span class="variable">$5</span> = (long *) 0xfffffffc</span><br><span class="line">(gdb) p (long*)*((long*)0x804954c + 0)</span><br><span class="line"><span class="variable">$6</span> = (long *) 0x8048d68 &lt;CBase2::vfunc2()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x804954c + 1)</span><br><span class="line"><span class="variable">$7</span> = (long *) 0x0</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  由此可以看出，cdriveb1b2有两个虚表指针，占据cdriveb1b2的存储空间，这两个虚表指针分别继承自两个父类CBase1和CBase2的虚函数表，由此可知，CDriveB1B2的存储关系如下<del>补图呀</del></p>
+</blockquote>
+<blockquote>
+<p>  再来分析多父类有多次继承的子类，先定义一个<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CDriveD1S</span>:</span> <span class="keyword">public</span> CDrive1B1, <span class="keyword">public</span> CBase2</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;  <span class="comment">//size of CDriveD1S is 8</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CDriveD1S cdrive1s;     <span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  CDriveD1S类的继承关系如下图所示<del>补图</del><br></p>
+</blockquote>
+<blockquote>
+<p>  那么实际上CDriveD1S的存储空间及其虚表内容是怎样，继续用gdb的方式与上面同样的方法将cdrive1s的内容打印出来：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对象存储的内容</span></span><br><span class="line">(gdb) p cdrive1s</span><br><span class="line"><span class="variable">$1</span> = &#123;</span><br><span class="line">    &lt;CDrive1B1&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            _vptr.CBase1 = 0x80494bc &lt;vtable <span class="keyword">for</span> CDriveD1S+8&gt;</span><br><span class="line">            &#125;,</span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">        &lt;CBase2&gt; = &#123;</span><br><span class="line">            _vptr.CBase2 = 0x80494d0 &lt;vtable <span class="keyword">for</span> CDriveD1S+28&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#第一个虚表指针的内容</span></span><br><span class="line">(gdb) p (long*)*((long*)0x80494bc + 0)</span><br><span class="line"><span class="variable">$5</span> = (long *) 0x8048df8 &lt;CDrive1B1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494bc + 1)</span><br><span class="line"><span class="variable">$6</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494bc + 2)</span><br><span class="line"><span class="variable">$7</span> = (long *) 0x8048e28 &lt;CDrive1B1::v1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494bc + 3)</span><br><span class="line"><span class="variable">$8</span> = (long *) 0xfffffffc</span><br><span class="line"></span><br><span class="line"><span class="comment">#第二个虚表指针的内容</span></span><br><span class="line">(gdb) p (long*)*((long*)0x80494d0 + 0)</span><br><span class="line"><span class="variable">$9</span> = (long *) 0x8048d68 &lt;CBase2::vfunc2()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494d0 + 1)</span><br><span class="line"><span class="variable">$10</span> = (long *) 0x0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  虽然cdrive1s打印的虚函数内容多一些，但虚表结构是与cdriveb1b2一致。</p>
+</blockquote>
+<ol start="3">
+<li>菱形继承中的虚函数<blockquote>
+<p>  继续研究CDriveD1类的继承关系，如图所示<del>给图呀</del>：<br></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>  同样用gdb打印虚表信息：</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cdrived中的结构</span></span><br><span class="line">(gdb) p cdrived</span><br><span class="line"><span class="variable">$12</span> = &#123;</span><br><span class="line">    &lt;CDrive1B1&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            _vptr.CBase1 = 0x80494f8 &lt;vtable <span class="keyword">for</span> CDriveD1+8&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">    &lt;CDrive1B2&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            vptr.CBase1 = 0x8049514 &lt;vtable <span class="keyword">for</span> CDriveD1+36&gt;</span><br><span class="line">            &#125;, </span><br><span class="line">            &lt;No data fields&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">    &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment"># cdrived第一张虚表（从CDrive1B1）</span></span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 0)</span><br><span class="line"><span class="variable">$14</span> = (long *) 0x8048f18 &lt;CDriveD1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 1)</span><br><span class="line"><span class="variable">$15</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 2)</span><br><span class="line"><span class="variable">$16</span> = (long *) 0x8048f4e &lt;CDriveD1::v1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 3)</span><br><span class="line"><span class="variable">$17</span> = (long *) 0x8048f7e &lt;CDriveD1::v2func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 4)</span><br><span class="line"><span class="variable">$18</span> = (long *) 0x8048fb4 &lt;CDriveD1::vd1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x80494f8 + 5)</span><br><span class="line"><span class="variable">$19</span> = (long *) 0xfffffffc</span><br><span class="line"></span><br><span class="line"><span class="comment"># cdrived第二张虚表（从CDrive1B2）</span></span><br><span class="line">(gdb) p (long*)*((long*)0x8049514 + 0)</span><br><span class="line"><span class="variable">$20</span> = (long *) 0x8048f47 &lt;non-virtual thunk to CDriveD1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049514 + 1)</span><br><span class="line"><span class="variable">$21</span> = (long *) 0x8048d38 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049514 + 2)</span><br><span class="line"><span class="variable">$22</span> = (long *) 0x8048fad &lt;non-virtual thunk to CDriveD1::v2func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049514 + 3)</span><br><span class="line"><span class="variable">$23</span> = (long *) 0x0</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  菱形继承的虚函数表与普通多继承的数据一致，但是，仔细观察可以发现，这两个分别从CDrive1B1和CDrive1B2继承而来的虚表有重叠部分 —— 祖先类的虚函数CBase1::vb1func1()被重复放在这两个父类的虚函数表中了。那么如果子类CDriveD1要调用祖先类的vb1func1会怎样？<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cdrived.vb1func1();         <span class="comment">//编译出错，提示函数‘vb1func1’有歧义</span></span><br><span class="line">cdrived.CBase1::vb1func1(); <span class="comment">//编译出错，提示‘CBase1’对‘CDriveD1’有歧义</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  此时编译会出错，出错的原因是这两个父类在各自的虚表中都保留一份CBase1::vb1func1()的函数指针，虽然内容一样，但实际运行时程序无法选择到底用哪一边的虚函数指针的偏置来索引对应的函数（是应该用CDrive1B1的虚表指针索引呢还是应该用CDrive1B2的虚表指针索引），这就引发歧义；即使用作用域限定也不行，<del>这个不懂</del>这个等了解作用域运算的作用后再细研究。那有什么方法能够使得子类CDriveD1能够调用祖先类CBase1的vb1func1函数呢？下面的虚继承可以完成这项艰巨的任务。</p>
+</blockquote>
+<ul>
+<li>虚继承的作用</li>
+</ul>
+<blockquote>
+<p>  紧接上面的问题，为了做对比，保留原有的函数结构，只在父类用虚继承的方式继承祖父类CBase1，新的类定义如下<del>添图</del>：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CVDrive1B1</span>:</span> <span class="keyword">public</span> <span class="keyword">virtual</span> CBase1</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B1::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdriveb1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B1::cdriveb1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B1::v1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;  <span class="comment">//size of CVDrive1B1 is 4</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CVDrive1B2</span>:</span> <span class="keyword">public</span> <span class="keyword">virtual</span> CBase1 </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B2::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdriveb2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B2::cdriveb2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B2::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDrive1B2::v2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;         <span class="comment">//size of CVDrive1B2 is 4</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CVDriveD1</span>:</span> <span class="keyword">public</span> CVDrive1B1,<span class="keyword">public</span> CVDrive1B2</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">cdrivedfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::cdrivedfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vfunc1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::vfunc1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::v1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">v2func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::v2func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">vd1func1</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"CVDriveD1::vd1func1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125; ;</span><br><span class="line">&#125;;      <span class="comment">//size of CVDriveD1 is 8</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  接下来，尝试CVDriveD1对象能不能调用祖父类CBase1中的函数vb1func1()<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CVDriveD1 cvdrived;</span><br><span class="line">cvdrived.vb1func1();            <span class="comment">//输出"CBase1::vb1func1"</span></span><br><span class="line">cvdrived.CBase1::vb1func1();    <span class="comment">//输出"CBase1::vb1func1"</span></span><br><span class="line">cvdrived.base1func1();          <span class="comment">//输出"CBase1::vbase1func1"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  由此可以看出，虚继承可以使得菱形继承中的子类能够访问祖先类的函数（包括虚函数和非虚函数，非虚函数后面为何能够调用现在还不知道如何解释）。为什么虚继承能够有如此功能，还是老方法，用gdb打印虚表的关系：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p cvdrived</span><br><span class="line"><span class="variable">$1</span> = &#123;</span><br><span class="line">    &lt;CVDrive1B1&gt; = &#123;</span><br><span class="line">        &lt;CBase1&gt; = &#123;</span><br><span class="line">            _vptr.CBase1 = 0x8049804 &lt;vtable <span class="keyword">for</span> CVDriveD1+20&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">        &lt;No data fields&gt;&#125;, </span><br><span class="line">    &lt;CVDrive1B2&gt; = &#123;</span><br><span class="line">        &lt;No data fields&gt;</span><br><span class="line">        &#125;, </span><br><span class="line">        &lt;No data fields&gt;</span><br><span class="line">    &#125;</span><br><span class="line">(gdb) p sizeof(cvdrived)</span><br><span class="line"><span class="variable">$2</span> = 8</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  这个很奇怪，cvdrived的大小为8，而打印出的虚表指针只有一个，而且只有其中第一个父类CVDrive1B1有虚表指针，第二个父类CVDrive1B2没有，cvdrived也没有其他数据成员。那么cvdrived的另外一个空间存放的是什么数据？继续调试：</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(gdb) p/x (&amp;((int)cvdrived))</span><br><span class="line"><span class="variable">$3</span> = 0xffffce24</span><br><span class="line">(gdb) p/x (&amp;((int)cvdrived))+1</span><br><span class="line"><span class="variable">$4</span> = 0xffffce28</span><br><span class="line">(gdb) p/x *((&amp;((int)cvdrived))+0)</span><br><span class="line"><span class="variable">$5</span> = 0x8049804</span><br><span class="line">(gdb) p/x *((&amp;((int)cvdrived))+1)</span><br><span class="line"><span class="variable">$6</span> = 0x804982c</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  cvdrived的第二个存储数据值0x804982c与已知的虚函数表指针值0x8049804相差不大，由此猜测0x804982c也是指针，接下来，按常规调试打印这指针所指向的内容：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#打印虚表（0x8049804）</span></span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 0)</span><br><span class="line"><span class="variable">$10</span> = (long *) 0x804912c &lt;CVDriveD1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 1)</span><br><span class="line"><span class="variable">$11</span> = (long *) 0x8048d74 &lt;CBase1::vb1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 2)</span><br><span class="line"><span class="variable">$12</span> = (long *) 0x8049172 &lt;CVDriveD1::v1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 3)</span><br><span class="line"><span class="variable">$13</span> = (long *) 0x80491a2 &lt;CVDriveD1::v2func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 4)</span><br><span class="line"><span class="variable">$14</span> = (long *) 0x80491d8 &lt;CVDriveD1::vd1func1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x8049804 + 5)</span><br><span class="line"><span class="variable">$15</span> = (long *) 0xfffffffc</span><br><span class="line"><span class="comment">#第二个指针（0x804982c）</span></span><br><span class="line">(gdb) p (long*)*((long*)0x804982c + 0)</span><br><span class="line"><span class="variable">$19</span> = (long *) 0x804916a &lt;non-virtual thunk to CVDriveD1::vfunc1()&gt;</span><br><span class="line">(gdb) p (long*)*((long*)0x804982c + 1)</span><br><span class="line"><span class="variable">$20</span> = (long *) 0x0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>  看起来虚继承后的虚函数表的内容被”整理“过，该虚表中只存在被子类重写和没被子类重写的虚函数，并没有像非虚继承那样重复保存两份相同的虚函数指针在不同的虚表上，仔细观察虽然有两个CVDriveD1::vfunc1()函数，但其函数地址不同（分别是0x804912c和0x804916a），而且已经指明其中一个为非虚函数（<non-virtual thunk="" to="" cvdrived1::vfunc1()="">）那么CVDriveD1存储的第二个指针的意义是什么，跪求大神们赐教？</non-virtual></p>
+</blockquote>
+<blockquote>
+<p>  由此，可以得出CVDriveD1对象的虚函数表结构图<del>图图图！</del></p>
+</blockquote>
+<h2 id="多态作为参数的限制"><a href="#多态作为参数的限制" class="headerlink" title="多态作为参数的限制"></a>多态作为参数的限制</h2><p style="text-indent:2em"><br>    在非指针的情况下，子类对父类变量的数据复制往往会发生截断，但类中的函数并不占空间，那么在子类对父类变量的复制过程中父类如何选择使用函数。<br></p>
+
+<hr>
+<h3 id="1-非指针变量的父子类之间的复制不能多态"><a href="#1-非指针变量的父子类之间的复制不能多态" class="headerlink" title="1. 非指针变量的父子类之间的复制不能多态"></a>1. 非指针变量的父子类之间的复制不能多态</h3><p style="text-indent:2em"><br>    比如有如下定义：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~Book()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"this is book destruction."</span>&lt;&lt;<span class="built_in">endl</span>;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">reading</span><span class="params">()</span></span>&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"reading a book"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">uint32_t</span> pageNum;</span><br><span class="line">    <span class="keyword">char</span>* bookName;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AlgorithmBook</span>:</span><span class="keyword">public</span> Book</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~AlgorithmBook()&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"this is algorithm book destruction"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">reading</span><span class="params">()</span></span>&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"reading an algorithm book"</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">uint32_t</span> tuiFunCnt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    尝试运行下面程序：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AlgorithmBook algoBook;</span><br><span class="line">Book book = algoBook;       <span class="comment">//父类局部</span></span><br><span class="line">Book* pbook = &amp;algoBook;    <span class="comment">//父类指针</span></span><br><span class="line">algoBook.reading();         <span class="comment">//使用AlgorithmBook::reading</span></span><br><span class="line">book.reading();             <span class="comment">//使用Book::reading</span></span><br><span class="line">pbook-&gt;reading();           <span class="comment">//使用AlgorithmBook::reading</span></span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    可见父类的非指针变量(book)并没有调用到子类的方法(reading)，为什么会这样，考虑下以下两种情形<br></p>
+
+<ul>
+<li>假设父类非指针变量可以调用子类多态化的函数<p style="text-indent:2em"><br>  也就是book只占有Book所存储的空间的情况下能够调用子类的reading，这样在现有的函数功能看起来没问题（只是一个普通打印信息），但如果子类的reading如果定义为如下的函数:<br></p>
+
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> AlgorithmBook::reading()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"reading an algorithm book"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"lesson count is "</span>&lt;&lt;<span class="keyword">this</span>-&gt;nTuiFunCnt&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    这样就会导致book的确需要增加子类AlgorithmBook的nTuiFunCnt成员存放空间，这样显然不成立book只占用Book的空间大小的情况，另外无论如何重载复制构造函数或赋值运算符，基类(Book)都没有子类的那个成员，所以这种既不想浪费空间又要调用子类的矛盾成立。<br></p>
+
+<ul>
+<li>假设父类非指针变量能够全盘复制子类中的所有成员<p style="text-indent:2em"><br>  既然book在这种情况下需要子类AlgorithmBook，那么全盘复制不就行了。但是，这实际导致了空间浪费，如果其他子类（比如有一个子类LiteratureBook的对象）也要复制到非指针变量中，那么，在定义基类非指针变量的时候就要分配所有的子类空间，当子类繁多时，基类以此扩大空间的定义，空间占用相当大；而实际上，在单纯地想用基类运作时用不到到这些不需要的资源的可能性很多。<br></p>
+
+</li>
+</ul>
+<p style="text-indent:2em"><br>    当然像这种父类非指针变量给子类非指针变量赋值或初始化复制也是不可以的，还有子类指针指向父类地址的行为也是会不被允许：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Book book;</span><br><span class="line">AlgorithmBook algoBook1 = book; <span class="comment">//编译出错，提示不适配的转换</span></span><br><span class="line">AlgorithmBook algoBook2;</span><br><span class="line">AlgorithmBook* palgoBook;</span><br><span class="line"></span><br><span class="line">algoBook2 = book;               <span class="comment">//编译出错，提示不适配的转换</span></span><br><span class="line">palgoBook = &amp;book;              <span class="comment">//编译出错，提示指针类型不适配</span></span><br><span class="line">palgoBook = <span class="keyword">dynamic_cast</span>&lt;AlgorithmBook*&gt;(&amp;book);    <span class="comment">//编译警告，dynamic_cast的转换将不会成功。</span></span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    编译器这样处理的原因是，当父类对象要对子类对象赋值或复制时，对于那些子类有而父类没有的子类成员的处理是未知的（保持原样不就行了？这个坑待填）。而子类指针指向父类时，对于后续继续对该子类指针的使用很有可能使用到父类没有的成员，这样导致的结果也是未知的有危险的。<br></p>
+
+<h3 id="2-父子类作为函数也不能多态"><a href="#2-父子类作为函数也不能多态" class="headerlink" title="2. 父子类作为函数也不能多态"></a>2. 父子类作为函数也不能多态</h3><p style="text-indent:2em"><br>    尝试将变量作为普通变量，引用，指针传入函数：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">test</span><span class="params">(Book book, Book&amp; qbook, Book* pbook)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    book.reading();</span><br><span class="line">    qbook.reading();</span><br><span class="line">    pbook-&gt;reading();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    运行程序：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AlgorithmBook algoBook;</span><br><span class="line">test(algoBook,algoBook,&amp;algoBook);</span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    这时候，test函数实际的运行情况是这样：<br></p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">test((Book )algoBook, (AlgorithmBook&amp; )algoBook, (AlgorithmBook* )&amp;algoBook)</span><br><span class="line">&#123;</span><br><span class="line">    ((Book )algoBook).reading();    <span class="comment">//使用Book::reading</span></span><br><span class="line">    algoBook.reading();             <span class="comment">//使用AlgorithmBook::reading</span></span><br><span class="line">    algoBook-&gt;reading();            <span class="comment">//使用AlgorithmBook::reading</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p style="text-indent:2em"><br>    这种函数普通参数不能多态的规则也是遵循上述一样的规则 —— 空间最小化，否则，在多重继承和多重函数调用势必没有足够的资源（堆栈）能够支持其运行。<br></p>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><em>《深度探索C++对象模型》</em></li>
+<li><em><a href="https://blog.csdn.net/SuLiJuan66/article/details/48897867" target="_blank" rel="noopener">https://blog.csdn.net/SuLiJuan66/article/details/48897867</a></em></li>
+<li><em><a href="http://blog.51cto.com/haoel/124595" target="_blank" rel="noopener">http://blog.51cto.com/haoel/124595</a></em></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/literature/快思慢想/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bamend">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="the shape of bamend">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/29/literature/快思慢想/" itemprop="url">快思慢想</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T21:16:16+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>《Thinking,Fast and Slow》—— Daniel Kahneman</em></p>
+<h1 id="思考的系统"><a href="#思考的系统" class="headerlink" title="思考的系统"></a>思考的系统</h1><p style="text-indent:2em"><br><br></p>
+
+<h2 id="系统一"><a href="#系统一" class="headerlink" title="系统一"></a>系统一</h2><blockquote>
+<p><del>哎呀看过了好懒得写</del>待填</p>
+</blockquote>
+<h2 id="系统二"><a href="#系统二" class="headerlink" title="系统二"></a>系统二</h2><blockquote>
+<p><del>哎呀看过了好懒得写</del>待填</p>
+</blockquote>
+<h1 id="心无二用"><a href="#心无二用" class="headerlink" title="心无二用"></a>心无二用</h1><p style="text-indent:2em"><br>很少有人能够同时做着激烈的运动（或者带点复杂），大脑中同时做着复杂的计算，在我们的大脑CPU资源限制下，做复杂的事情就需要分时运作了。但是我们可以一边慢走一边说话，因为走的时候不用费脑力去控制双腿，而说话会占用相对走路使用大量的系统二的资源，这两种资源的抢占在能够被大脑包容的范围内。回想我第一次在电脑打字时，需要逐个看键盘逐个打出，这样消耗了更多的精力在寻找键盘位置上，而后面却不用怎么消耗资源在寻找合适的字。<br></p>
+
+<h2 id="心智工作的形式"><a href="#心智工作的形式" class="headerlink" title="心智工作的形式"></a>心智工作的形式</h2><ul>
+<li><p>需要的集中注意力 —— 认知努力</p>
+<p>  就是把感受到的东西输入大脑，由大脑用力去分析判断的思考过程。</p>
+</li>
+<li><p>主要的控制对无关事务的注意 —— 自我控制</p>
+<p>  就是不受其他事物影响所做出的努力的过程。</p>
+</li>
+<li><p>心流模式</p>
+<p>  即不用专门过多把精力放在自我控制的过程，自然而然地去做认知努力的过程。<br></p><p></p>
+</li>
+</ul>
+<h2 id="自我损耗"><a href="#自我损耗" class="headerlink" title="自我损耗"></a>自我损耗</h2><p style="text-indent:2em"><br>    需要克服厌恶，强迫地去做某一件事，这个时候比较不愿意或不能够通过自我控制地去做这件事情。这种过程就存在自我损耗。<br></p>
+
+<h2 id="控制和理性"><a href="#控制和理性" class="headerlink" title="控制和理性"></a>控制和理性</h2><ul>
+<li><p>接受奖励延迟</p>
+</li>
+<li><p>抵御眼前诱导</p>
+</li>
+<li><p>对系统一所提供的思考结论保持清醒</p>
+</li>
+</ul>
+<h1 id="联结与促发"><a href="#联结与促发" class="headerlink" title="联结与促发"></a>联结与促发</h1><h2 id="联结"><a href="#联结" class="headerlink" title="联结"></a>联结</h2><ul>
+<li><p>联结的三大原则：相似性，时间地点连续性，因果关系 —— Havid Hume</p>
+<p style="text-indent:2em"><br>  当我们遇到已经在我们身上出现过的事物时，遇到相似的事物总会想起与此事物的相关性，并且做出对应的反应，举个栗子，“闻梅止渴”，当吃过梅的人了解它的滋味后就知道它的酸味只有通过大量分泌唾液来减少。下次听到这种水果时立刻能够做出相应的反应——大量分泌唾液。在这个过程中没有一处不通过实践来证明这种原则关系。当然没吃过梅子的人当然不能达到“闻梅止渴”这个技能，这也说明认知是跟身体有关，而不仅仅用大脑而已 —— 这就是Mark Johnson所说的[ 身体内含的认知 ]。<br></p>
+</li>
+<li><p>联结的类别：因果联结，属性联结，所属联结等</p>
+</li>
+</ul>
+<h2 id="促发效应"><a href="#促发效应" class="headerlink" title="促发效应"></a>促发效应</h2><p style="text-indent:2em"><br>    促发基于存在乎大脑的联结关系，比如，在我们看到芬芳花朵图片时，心情不免放松，当看见生气的脸图时，心理不免紧张。即使系统二已经再三告诉自己这些图片并没有实际的影响 —— 即闻不到花香，也听不到唾骂。但我们还是受到这种系统一产生的促发影响，并且不是有意识地做出相应的判断和选择，并且很可能影响接下来的心情和行为。所以促发效应告诉我们，身边的环境能够影响本身的行为，或者本身的习惯性行为会影响对事物本身的思考（可以做快速选择题来验证，结果会发生惯性选择效应），但我们可以选择引导我们的触发环境，[ 不管感觉怎样，你的行为要冷静而仁慈 ]。<br></p>
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bamend</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bamend</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
 
 <script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
-    
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
-	<script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+
+
+  
 
 
 
@@ -717,23 +1080,111 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
 
 
 
 
-
-
-	<script>
-		$(".fabs").mouseleave(function(){
-			if( $("#prime").hasClass("is-visible") )
-				$("#prime").click();
-		});
-	</script>
-
-            </main>
-        </div>
-		
-    </body>
-		
 	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true}});</script></body>
 </html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hehesimida">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="errno作用  errno的功能  先man一下：1234The value in errno is significant only when the return value of the call indicated an error (i.e., -1 from most system calls; -1 or NULL from most library functions); a f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="errno与多线程变量安全">
+<meta property="og:url" content="http://yoursite.com/unfinish/linux/errno与多线程变量安全.html">
+<meta property="og:site_name" content="the shape of bamend">
+<meta property="og:description" content="errno作用  errno的功能  先man一下：1234The value in errno is significant only when the return value of the call indicated an error (i.e., -1 from most system calls; -1 or NULL from most library functions); a f">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-16T09:23:06.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="errno与多线程变量安全">
+<meta name="twitter:description" content="errno作用  errno的功能  先man一下：1234The value in errno is significant only when the return value of the call indicated an error (i.e., -1 from most system calls; -1 or NULL from most library functions); a f">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/unfinish/linux/errno与多线程变量安全.html">
+
+
+
+
+
+  <title>errno与多线程变量安全 | the shape of bamend</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">the shape of bamend</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">errno与多线程变量安全</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="errno作用"><a href="#errno作用" class="headerlink" title="errno作用"></a>errno作用</h2><hr>
+<ul>
+<li>errno的功能</li>
+</ul>
+<p>先man一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The value in errno is significant only when the return value of the call indicated an error (i.e., -1 from most system calls; -1 or NULL from most library functions); a function that succeeds is allowed to change errno.  The value of errno is never set to zero by any system  call or library function.</span><br><span class="line">For some system calls and library functions (e.g., getpriority(2)), -1 is a valid return on success.  In such cases, a successful return can be distinguished from an error return by setting errno to zero before the call, and then, if the call returns a status that indicates that an error may have occurred, checking to see if errno has a nonzero value.</span><br><span class="line"></span><br><span class="line">errno is defined by the ISO C standard to be a modifiable lvalue of type int, and must not be explicitly declared; errno may be a macro. errno is thread-local; setting it in one thread does not affect its value in any other thread.</span><br></pre></td></tr></table></figure></p>
+<p>就是说errno:</p>
+<ol>
+<li>用于提示API的具体出错信息。linux的API返回出错都是非0值，但更具体的定位出错需要errno值来辅助定位。</li>
+<li>errno一般不会被置0，然后只有API出错返回时errno才被设置，此时查询errno才有意义。</li>
+<li>errno可能是一个宏，被定义为线程局部的,即errno能够符合线程安全。</li>
+</ol>
+<ul>
+<li>errno的值定义</li>
+</ul>
+<p>errno的具体指定义在sysdeps/mach/hurd/bits/errno.h文件中，<del>有些长，这里先不列出来</del>可以通过gcc官网git找到对应的<a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/mach/hurd/bits/errno.h;h=8f2fbfd80ffd3dc3c765a7635203d69b1329ead4;hb=0c1719e65b2a5a80331d4f635612799f853b0479" target="_blank" rel="noopener">定义</a></p>
+<h2 id="全局变量在多线程的风险"><a href="#全局变量在多线程的风险" class="headerlink" title="全局变量在多线程的风险"></a>全局变量在多线程的风险</h2><hr>
+<p>已知 errno在使用时需要通过 <em>extern int errno</em>声明为全局量定义，那么在多线程情况下是怎样呢，已知全局量在运行内存中是存放在数据段中，而多线程只有占用各自的小部分栈段和CPU寄存器资源，其他资源是共享的，那么如果 <em>errno</em>定义为普通的全局量，那么在多线程中共用的全局量在线程各自改变时肯定会受影响，譬如，线程1和线程2同时操作出错，但由于errno是全局量，有可能线程1捕获到的出错返回errno的信息实际上是线程2的报错信息，这样定义errno是不科学的。伟大的gnu必然会考虑这种情况，所以把errno定义为线程安全性的。那么 errno如何实现线程安全，下面继续深入了解errno实现。</p>
+<h2 id="errno深入探索实现机制"><a href="#errno深入探索实现机制" class="headerlink" title="errno深入探索实现机制"></a>errno深入探索实现机制</h2><hr>
+<p>先查libc的源码，先用source insight查看extern int errno 关键字，可以找到如下的errno的可能的宏定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#/*sysdeps/unix/sysv/linux/riscv/sysdep.S*/</span><br><span class="line">#if IS_IN (libc)</span><br><span class="line"># define errno __libc_errno</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.h(stdlib)*/</span></span><br><span class="line"><span class="comment">/* The error code set by various library functions.  */</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> *__errno_location (<span class="keyword">void</span>) __THROW __attribute_const__;</span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> errno (*__errno_location ())</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.h(include)*/</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> rtld_errno;</span><br><span class="line"><span class="meta">#  <span class="meta-keyword">define</span> errno rtld_errno</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.c(csu)*/</span></span><br><span class="line">__thread <span class="keyword">int</span> errno;</span><br></pre></td></tr></table></figure>
+<p>那么，到底哪个是可能的errno的具体实现定义？这需要看程序中用到的errno的宏展开情况，编写以下测试代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//errno_test.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> errno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后只进行宏展开，不编译：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E errno_test.c</span><br></pre></td></tr></table></figure></p>
+<p>生成的结果：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 "errno_test.c"</span></span><br><span class="line"><span class="comment"># 1 "&lt;built-in&gt;"</span></span><br><span class="line"><span class="comment"># 1 "&lt;command-line&gt;"</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/stdc-predef.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "&lt;command-line&gt;" 2</span></span><br><span class="line"><span class="comment"># 1 "errno_test.c"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 28 "/usr/include/errno.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/features.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 367 "/usr/include/features.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 410 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 411 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 368 "/usr/include/features.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 391 "/usr/include/features.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 392 "/usr/include/features.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 29 "/usr/include/errno.h" 2 3 4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/bits/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 24 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/linux/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/asm-generic/errno.h" 1 3 4</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 "/usr/include/asm-generic/errno-base.h" 1 3 4</span></span><br><span class="line"><span class="comment"># 5 "/usr/include/asm-generic/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/x86_64-linux-gnu/asm/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 1 "/usr/include/linux/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 25 "/usr/include/x86_64-linux-gnu/bits/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 50 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 50 "/usr/include/x86_64-linux-gnu/bits/errno.h" 3 4</span></span><br><span class="line">extern int *__errno_location (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));</span><br><span class="line"><span class="comment"># 36 "/usr/include/errno.h" 2 3 4</span></span><br><span class="line"><span class="comment"># 58 "/usr/include/errno.h" 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 "errno_test.c" 2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5 "errno_test.c"</span></span><br><span class="line">extern int</span><br><span class="line"><span class="comment"># 5 "errno_test.c" 3 4</span></span><br><span class="line">          (*__errno_location ())</span><br><span class="line"><span class="comment"># 5 "errno_test.c"</span></span><br><span class="line">               ;</span><br><span class="line"></span><br><span class="line">int main(int argc, char* argv[])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，extern int errno 中的errno被展开成 (*<strong>errno_location ())，再深入探索</strong>errno_location的定义:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* The error code set by various library functions.  */</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> *__errno_location (<span class="keyword">void</span>) __THROW __attribute_const__;</span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> errno (*__errno_location ())</span></span><br></pre></td></tr></table></figure></p>
+<p>往下追踪发现有两个定义，一个弱引用函数一个普通全局函数，先看弱引用函数定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> IS_IN (rtld)</span></span><br><span class="line"><span class="comment">/*sysdeps/mach/hurd/Errno-loc.c*/</span></span><br><span class="line"><span class="comment">/* rtld can not access TLS too early, thus rtld_errno.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   Instead of making __open/__close pass errno from TLS to rtld_errno, simply</span></span><br><span class="line"><span class="comment">   use a weak __errno_location using rtld_errno, which will be overriden by the</span></span><br><span class="line"><span class="comment">   libc definition.  */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> rtld_errno;</span><br><span class="line"><span class="keyword">int</span> * weak_function</span><br><span class="line">__errno_location (<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> &amp;rtld_errno;</span><br><span class="line">&#125;</span><br><span class="line">libc_hidden_weak (__errno_location)</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../../csu/errno-loc.c"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这里说明libc的 <em>__errno_location</em>函数被定义时会使用libc的而忽略弱引用的函数，弱引用先返回的是rtld_errno这个静态量的地址。<br><br>再来看看普通的<em>__errno_location</em>函数定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*Errno-loc.c(csu)*/</span><br><span class="line">int *</span><br><span class="line">__errno_location (void)</span><br><span class="line">&#123;</span><br><span class="line">  return &amp;errno;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，最后返回的还是errno，那么这个errno到底是什么量？先用排除法排除以上的宏定义，得到errno可能是如下定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*errno.c(csu)*/</span></span><br><span class="line">__thread <span class="keyword">int</span> errno;</span><br></pre></td></tr></table></figure></p>
+<p>这个errno在定义时加上了一个 <em>__thread</em>，这个<strong>thread是什么？这个是线程局部存储的关键字，而且这个关键字需要编译器作为支撑的，<a href="https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html" target="_blank" rel="noopener">这里</a>是gcc.gnu对</strong>thread关键字的说明:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Thread-local storage (TLS) is a mechanism by which variables are allocated such that there is one instance of the variable per extant thread. The run-time model GCC uses to implement this originates in the IA-64 processor-specific ABI, but has since been migrated to other processors as well. It requires significant support from the linker (ld), dynamic linker (ld.so), and system libraries (libc.so and libpthread.so), so it is not available everywhere.</span><br><span class="line"></span><br><span class="line">At the user level, the extension is visible with a new storage class keyword: __thread. For example:</span><br><span class="line"></span><br><span class="line">     __thread int i;</span><br><span class="line">     extern __thread struct state s;</span><br><span class="line">     static __thread char *p;</span><br><span class="line">The __thread specifier may be used alone, with the extern or static specifiers, but with no other storage class specifier. When used with extern or static, __thread must appear immediately after the other storage class specifier.</span><br><span class="line"></span><br><span class="line">The __thread specifier may be applied to any global, file-scoped static, function-scoped static, or static data member of a class. It may not be applied to block-scoped automatic or non-static data member.</span><br><span class="line"></span><br><span class="line">When the address-of operator is applied to a thread-local variable, it is evaluated at run-time and returns the address of the current thread&apos;s instance of that variable. An address so obtained may be used by any thread. When a thread terminates, any pointers to thread-local variables in that thread become invalid.</span><br><span class="line"></span><br><span class="line">No static initialization may refer to the address of a thread-local variable.</span><br><span class="line"></span><br><span class="line">In C++, if an initializer is present for a thread-local variable, it must be a constant-expression, as defined in 5.19.2 of the ANSI/ISO C++ standard.</span><br></pre></td></tr></table></figure></p>
+<p>也就是说，对于__thread关键字：</p>
+<ol>
+<li>使被修饰的变量在每个现存的线程有各自的一个变量实例</li>
+<li>一开始gcc用于IA-64处理器，后面其他处理器也有，但不能保证所有处理器和编译其可用</li>
+<li>可以单独使用，与外部或静态说明符一起使用，但不与其他存储类说明符一起使用。它可能不适用于块作用域的自动或非静态数据成员。</li>
+<li>当线程终止时，该线程中任何指向线程本地变量的指针都将无效。</li>
+</ol>
+<p>更深入的线程本地存储可以看(<del>鄙人还没有看过的</del>)<a href="https://akkadia.org/drepper/tls.pdf" target="_blank" rel="noopener">这篇文章</a>。</p>
+<h2 id="thread的使用"><a href="#thread的使用" class="headerlink" title="__thread的使用"></a>__thread的使用</h2><hr>
+<p>从深入探索errno可以学到了<strong>thread定义的变量是线程安全的，那么把</strong>thread放在我们自己程序中来试验下是否真的是这样，首选，编写一段测试程序：<br><br>头文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __DYNAMIC_LINK_VARIABLE_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __DYNAMIC_LINK_VARIABLE_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span>* data_point;</span><br><span class="line">    <span class="keyword">size_t</span> size;</span><br><span class="line">&#125;<span class="keyword">data_area_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span>;  <span class="comment">//用于创建data_area_t结构体节点</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span>; <span class="comment">//用于更改数据</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span>; <span class="comment">//用于打印数据</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span>; <span class="comment">//用于删除节点</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>目标使用程序如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//call_dynamic_link.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"><span class="comment">//gcc call_dynamic_link.c -m32 -g -o call_dynamic -pthread -ldynamic -L.  -Wl,-rpath,./</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">test_thread1</span><span class="params">(<span class="keyword">void</span> *arg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    sleep(<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x22</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line"></span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread1 create datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread1 modified datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">test_thread2</span><span class="params">(<span class="keyword">void</span> *arg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    sleep(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x33</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line"></span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread2 create datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"after thread2 modified datas:\n"</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="comment">/*需要以下延迟来延长thread2的生存周期，否则如果thread2比thread1先退出，</span></span><br><span class="line"><span class="comment">    根据这个程序条件那么thread1将会利用thread2使用过的空间,也就是说，</span></span><br><span class="line"><span class="comment">    如果thread1和thread2有先后运行完成的关系，就会导致thread1和thread2开辟的同一段地址的空间</span></span><br><span class="line"><span class="comment">    这是free函数的机制，free并不真正把空间释放，之前的空间仍然有保留*/</span></span><br><span class="line">    sleep(<span class="number">2</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">pthread_t</span> thread1;</span><br><span class="line">    <span class="keyword">pthread_t</span> thread2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">12</span>];</span><br><span class="line">    <span class="built_in">memset</span>(data,<span class="number">0x44</span>,<span class="keyword">sizeof</span>(data));</span><br><span class="line">    create_point(<span class="number">24</span>);</span><br><span class="line">    echo_datas(pthread_self());</span><br><span class="line">    modified_datas(data, <span class="keyword">sizeof</span>(data)/<span class="keyword">sizeof</span>(data[<span class="number">0</span>]));</span><br><span class="line">    <span class="comment">//create thread1</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"thread1 = 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)thread1);</span><br><span class="line">    pthread_create(&amp;thread1, <span class="literal">NULL</span>, test_thread1, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">//create thread2</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"thread2 = 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)thread2);</span><br><span class="line">    pthread_create(&amp;thread2, <span class="literal">NULL</span>, test_thread2, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">//thread join</span></span><br><span class="line">    pthread_join(thread1, (<span class="keyword">void</span>**)&amp;data);</span><br><span class="line">    <span class="comment">//thread join</span></span><br><span class="line">    pthread_join(thread2, (<span class="keyword">void</span>**)&amp;data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>就是在创建两个线程之前主线程先改变和打印设置的量，然后线程thread2先再次创建和改变打印设置的量，中间停顿2s，在此期间thread1创建并改变和打印设置的量，然后thread1结束，thread2停顿2s后再次打印，具体的打印都会把设置量的值和地址体现出来。<br><br>接下来先再证实一下普通全局变量在多线程的使用情况，以下是变量的定义文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable.c</span></span><br><span class="line"><span class="comment">//test normal global data</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span></span><br><span class="line"><span class="keyword">data_area_t</span> global_data = &#123;.data_point = <span class="literal">NULL</span>, .size = <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    global_data.data_point = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)*size);</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    global_data.size = size;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(size &gt; global_data.size)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"modified data address is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)&amp;global_data);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memcpy</span>(global_data.data_point, data, size*(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//打印线程ID和变量的地址</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pthread = 0x%x, echo data address is 0x%x, size is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)pthread,(<span class="keyword">uint32_t</span>)&amp;global_data,global_data.size);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; global_data.size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0x%x "</span>,global_data.data_point[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(global_data.data_point != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">free</span>(global_data.data_point);</span><br><span class="line">    global_data.size = <span class="number">0</span>;</span><br><span class="line">    global_data.data_point = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread <span class="comment">#生成libdynamic.so</span></span><br><span class="line">gcc call_dynamic_link.c -m32 -g -o call_dynamic -pthread -ldynamic -L.  -Wl,-rpath,./</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">pthread = 0xf7d51700, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d5fdc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x44444444 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7d50b40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7f43028</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7d50b40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf754fb40, <span class="built_in">echo</span> data address is 0xf7f43028, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>结果显示普通全局量 <em>global_data</em>的地址在多线程打印出来是一个地址（都为0xf7f43028），由此可见普通全局变量在多线程是不安全的，这个在上面有提到，初始化的全局变量在初始化的数据段中，然鹅多线程会共用这个初始化的数据段。<br><br>那么只将全局量用 <em>__thread</em>修饰后会怎样，只更改的上述代码，将global_data在定义时用 <em>__thread</em>修饰：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__thread <span class="keyword">data_area_t</span> global_data = &#123;.data_point = <span class="literal">NULL</span>, .size = <span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>然后编译<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable.c -m32 -g -fPIC -shared -o libdynamic.so -pthread #生成libdynamic.so</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">pthread = 0xf7d3a700, <span class="built_in">echo</span> data address is 0xf7d3a6f8, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7d3a6f8</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d48dc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7538b38</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7d39b40, <span class="built_in">echo</span> data address is 0xf7d39b38, size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf7d39b38</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7d39b40, <span class="built_in">echo</span> data address is 0xf7d39b38, size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf7538b40, <span class="built_in">echo</span> data address is 0xf7538b38, size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>结果显示，在不同线程中global_data的存放地址是不同的，主线程的global_data地址在0xf7d3a6f8，线程1的global_data地址在0xf7d39b38，线程2的global_data地址在0xf7538b38。从这里可以看出，__thread关键字为每个线程开辟的global_data的地址是不同的。那么此时的global_data还是我们所谓的全局量吗？它存放的位置在哪里，是仍然存放在初始化的数据段，还是放在堆、栈或者其他什么地方呢？可以通过readelf命令查看global_data的信息。<br><br>命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">readelf -a libdynamic.so</span><br></pre></td></tr></table></figure></p>
+<p>先看没有__thread修饰的情况，打印太多，只看需要看的部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol table &apos;.symtab&apos; contains 72 entries:</span><br><span class="line">   Num:    Value  Size Type    Bind   Vis      Ndx Name</span><br><span class="line">   .....</span><br><span class="line">   59: 00002028     8 OBJECT  GLOBAL DEFAULT   24 global_data</span><br><span class="line">   .....</span><br></pre></td></tr></table></figure></p>
+<p>可见在没有<strong>thread修饰情况下，global_data为OBJECT类型，放置在全局。<br><br>然后再看有</strong>thread修饰的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Symbol table &apos;.symtab&apos; contains 72 entries:</span><br><span class="line">   Num:    Value  Size Type    Bind   Vis      Ndx Name</span><br><span class="line">   .....</span><br><span class="line">   61: 00000000     8 TLS     GLOBAL DEFAULT   17 global_data</span><br><span class="line">   .....</span><br></pre></td></tr></table></figure></p>
+<p>也就是说在<strong>thread修饰后，该变量仍然是全局性的，这说明</strong>thread并不改变变量的存放位置，只是把类型声明为TLS类型。</p>
+<h2 id="另一种方法实现变量线程安全"><a href="#另一种方法实现变量线程安全" class="headerlink" title="另一种方法实现变量线程安全"></a>另一种方法实现变量线程安全</h2><hr>
+<p>其实就是以下4个函数，利用key值来锁定分配的内存的位置信息，然后达到各个线程通过访问pthread_getspecific函数的方式来间接对堆的各个不同空间进行访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int pthread_key_create(pthread_key_t *key, void (*destr_function) (void *));</span><br><span class="line"></span><br><span class="line">int pthread_key_delete(pthread_key_t key);</span><br><span class="line"></span><br><span class="line">int pthread_setspecific(pthread_key_t key, const void *pointer);</span><br><span class="line"></span><br><span class="line">void * pthread_getspecific(pthread_key_t key);</span><br></pre></td></tr></table></figure>
+<p>man手册上有一个简单的使用栗子（在此之前，可能需要安装一下pthread的man手册，在ubuntu上用sudo apt-get install glibc-doc和sudo apt-get install manpages-posix manpages-posix-devl来安装关于pthread的man手册）：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Key for the thread-specific buffer */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_key_t</span> buffer_key;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Once-only initialisation of the key */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_once_t</span> buffer_key_once = PTHREAD_ONCE_INIT;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buffer_alloc</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  pthread_once(&amp;buffer_key_once, buffer_key_alloc);</span><br><span class="line">  pthread_setspecific(buffer_key, <span class="built_in">malloc</span>(<span class="number">100</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Return the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">get_buffer</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">char</span> *) pthread_getspecific(buffer_key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the key */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_key_alloc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  pthread_key_create(&amp;buffer_key, buffer_destroy);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Free the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_destroy</span><span class="params">(<span class="keyword">void</span> * buf)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">free</span>(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然在这个过程中还需要利用pthread_once函数来锁定全局的key只用初始化一次。接下来编写上述生成libdynamic.so的另一个实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dynamic_link_variable2.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdint.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"dynamic_link_variable.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//gcc dynamic_link_variable2.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Key for the thread-specific buffer */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_key_t</span> buffer_key;</span><br><span class="line"><span class="comment">/* Once-only initialisation of the key */</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">pthread_once_t</span> buffer_key_once = PTHREAD_ONCE_INIT;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Free the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_destroy</span><span class="params">(<span class="keyword">void</span> * buf)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>*)buf;</span><br><span class="line">    <span class="built_in">free</span>(data_area-&gt;data_point);</span><br><span class="line">    <span class="built_in">free</span>(data_area);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the key */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buffer_key_alloc</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pthread_key_create(&amp;buffer_key, buffer_destroy);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"--------------once process--------------\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Allocate the thread-specific buffer */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">buffer_alloc</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area;</span><br><span class="line">    pthread_once(&amp;buffer_key_once, buffer_key_alloc);   <span class="comment">//only execute once</span></span><br><span class="line"></span><br><span class="line">    data_area = (<span class="keyword">data_area_t</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">data_area_t</span>));</span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    data_area-&gt;data_point = (<span class="keyword">int</span>* )<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * size);</span><br><span class="line">    <span class="keyword">if</span>(data_area-&gt;data_point == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">free</span>(data_area);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    data_area-&gt;size = size;</span><br><span class="line"></span><br><span class="line">    pthread_setspecific(buffer_key, data_area);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">create_point</span><span class="params">(<span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> buffer_alloc(size);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">modified_datas</span><span class="params">(<span class="keyword">int</span>* data, <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>* )pthread_getspecific(buffer_key);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(size &gt; data_area-&gt;size)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"modified data address is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)data_area);</span><br><span class="line">    <span class="built_in">memcpy</span>(data_area-&gt;data_point, data, size*(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo_datas</span><span class="params">(<span class="keyword">pthread_t</span> pthread)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">data_area_t</span>* data_area = (<span class="keyword">data_area_t</span>* )pthread_getspecific(buffer_key);</span><br><span class="line">    <span class="keyword">if</span>(data_area == <span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"pthread = 0x%x, echo data address is 0x%x,size is 0x%x\n"</span>,(<span class="keyword">uint32_t</span>)pthread, (<span class="keyword">uint32_t</span>)data_area,data_area-&gt;size);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; data_area-&gt;size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0x%x "</span>,data_area-&gt;data_point[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete_point</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc dynamic_link_variable2.c -m32 -g -fPIC -shared -o libdynamic.so -pthread</span><br></pre></td></tr></table></figure></p>
+<p>同样运行call_dynamic：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">seeing-zynq@seeing:thread_variable$ ./call_dynamic</span><br><span class="line">--------------once process--------------</span><br><span class="line">pthread = 0xf7cfe700, <span class="built_in">echo</span> data address is 0x81d1410,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0x81d1410</span><br><span class="line">thread1 = 0x2f</span><br><span class="line">thread2 = 0xf7d0cdc8</span><br><span class="line">after thread2 create datas:</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf6b00470</span><br><span class="line">after thread2 modified datas:</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">after thread1 create datas:</span><br><span class="line">pthread = 0xf7cfdb40, <span class="built_in">echo</span> data address is 0xf6900470,size is 0x18</span><br><span class="line">0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">modified data address is 0xf6900470</span><br><span class="line">after thread1 modified datas:</span><br><span class="line">pthread = 0xf7cfdb40, <span class="built_in">echo</span> data address is 0xf6900470,size is 0x18</span><br><span class="line">0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x22222222 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br><span class="line">pthread = 0xf74fcb40, <span class="built_in">echo</span> data address is 0xf6b00470,size is 0x18</span><br><span class="line">0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x33333333 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0</span><br></pre></td></tr></table></figure></p>
+<p>实现的效果与__thread的修饰符差不多，但是，通过pthread_setspecific系列函数是用于定义指针指向对于的内存空间的一个“别名”，然后在各个线程中各自指定使用。</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><hr>
+<ol>
+<li>__thread到底在gcc内部如何实现变量的线程安全?</li>
+<li>pthread_setspecific系列函数如何实现在各个不同线程的键(key)-值对应机制？</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<ol>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/gcc-3.4.6/gcc/Thread_002dLocal.html</a></li>
+<li><a href="https://blog.csdn.net/JS072110/article/details/44855565" target="_blank" rel="noopener">https://blog.csdn.net/JS072110/article/details/44855565</a></li>
+</ol>
+<p><em>[未完持续…]</em></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bamend</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#errno作用"><span class="nav-number">1.</span> <span class="nav-text">errno作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量在多线程的风险"><span class="nav-number">2.</span> <span class="nav-text">全局变量在多线程的风险</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#errno深入探索实现机制"><span class="nav-number">3.</span> <span class="nav-text">errno深入探索实现机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#thread的使用"><span class="nav-number">4.</span> <span class="nav-text">__thread的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另一种方法实现变量线程安全"><span class="nav-number">5.</span> <span class="nav-text">另一种方法实现变量线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疑问"><span class="nav-number">6.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bamend</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true}});</script></body>
+</html>
