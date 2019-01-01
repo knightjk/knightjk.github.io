@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hehesimida">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="《cocos2d-x游戏开发》初学笔记 动作基类Action Action是一个抽象类，几乎所有动作都由该类派生而来，Action的派生关系如下图所示：     更详细的信息在 这里   源码的对应关系如下：  动作基类 Action12345//cocos2d\cocos\2d\CCAction.h/**  * @brief Base class for Action objects. */cl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cocos2dx动作">
+<meta property="og:url" content="http://yoursite.com/unfinish/cocos2dx/cocos2dx动作.html">
+<meta property="og:site_name" content="the shape of bamend">
+<meta property="og:description" content="《cocos2d-x游戏开发》初学笔记 动作基类Action Action是一个抽象类，几乎所有动作都由该类派生而来，Action的派生关系如下图所示：     更详细的信息在 这里   源码的对应关系如下：  动作基类 Action12345//cocos2d\cocos\2d\CCAction.h/**  * @brief Base class for Action objects. */cl">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true">
+<meta property="og:updated_time" content="2019-01-01T13:33:39.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cocos2dx动作">
+<meta name="twitter:description" content="《cocos2d-x游戏开发》初学笔记 动作基类Action Action是一个抽象类，几乎所有动作都由该类派生而来，Action的派生关系如下图所示：     更详细的信息在 这里   源码的对应关系如下：  动作基类 Action12345//cocos2d\cocos\2d\CCAction.h/**  * @brief Base class for Action objects. */cl">
+<meta name="twitter:image" content="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/unfinish/cocos2dx/cocos2dx动作.html">
+
+
+
+
+
+  <title>cocos2dx动作 | the shape of bamend</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">the shape of bamend</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">cocos2dx动作</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <p><em>《cocos2d-x游戏开发》初学笔记</em></p>
+<h2 id="动作基类Action"><a href="#动作基类Action" class="headerlink" title="动作基类Action"></a>动作基类Action</h2><blockquote>
+<p>Action是一个抽象类，几乎所有动作都由该类派生而来，Action的派生关系如下图所示：</p>
+</blockquote>
+<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true" alt="cocos基本角色"></div></p>
+<p><div align="left"></div></p>
+<blockquote>
+<p>更详细的信息在 <a href="http://www.cocos2d-x.org/reference/native-cpp/V3.0/db/d61/classcocos2d_1_1_action.html" target="_blank" rel="noopener">这里</a></p>
+</blockquote>
+<blockquote>
+<p>源码的对应关系如下：</p>
+<ul>
+<li>动作基类 <em>Action</em><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * @brief Base class for Action objects.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Action</span> :</span> <span class="keyword">public</span> Ref, <span class="keyword">public</span> Clonable&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>有限时间动作 <em>FiniteTimeAction</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class FiniteTimeAction</span></span><br><span class="line"><span class="comment"> * @brief</span></span><br><span class="line"><span class="comment"> * Base class actions that do have a finite time duration.</span></span><br><span class="line"><span class="comment"> * Possible actions:</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 0 seconds.</span></span><br><span class="line"><span class="comment"> * - An action with a duration of 35.5 seconds.</span></span><br><span class="line"><span class="comment"> * Infinite time actions are valid.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">FiniteTimeAction</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>跟随行为 <em>Follow</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Follow</span></span><br><span class="line"><span class="comment"> * @brief Follow is an action that "follows" a node.</span></span><br><span class="line"><span class="comment"> * Eg:</span></span><br><span class="line"><span class="comment"> * @code</span></span><br><span class="line"><span class="comment"> * layer-&gt;runAction(Follow::create(hero));</span></span><br><span class="line"><span class="comment"> * @endcode</span></span><br><span class="line"><span class="comment"> * Instead of using Camera as a "follower", use this action instead.</span></span><br><span class="line"><span class="comment"> * @since v0.99.2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Follow</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>速度 <em>Speed</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCAction.h</span></span><br><span class="line"><span class="comment">/** @class Speed</span></span><br><span class="line"><span class="comment"> * @brief Changes the speed of an action, making it take longer (speed&gt;1)</span></span><br><span class="line"><span class="comment"> * or shorter (speed&lt;1) time.</span></span><br><span class="line"><span class="comment"> * Useful to simulate 'slow motion' or 'fast forward' effect.</span></span><br><span class="line"><span class="comment"> * @warning This action can't be Sequenceable because it is not an IntervalAction.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Speed</span> :</span> <span class="keyword">public</span> Action&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>瞬时动作 <em>ActionInstant</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCActionInstant.h</span></span><br><span class="line"><span class="comment">/** @class ActionInstant</span></span><br><span class="line"><span class="comment">* @brief Instant actions are immediate actions. They don't have a duration like the IntervalAction actions.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInstant</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>延时动作 <em>ActionInterval</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @class ActionInterval</span></span><br><span class="line"><span class="comment">@brief An interval action is an action that takes place within a certain period of time.</span></span><br><span class="line"><span class="comment">It has an start time, and a finish time. The finish time is the parameter</span></span><br><span class="line"><span class="comment">duration plus the start time.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">These ActionInterval actions have some interesting properties, like:</span></span><br><span class="line"><span class="comment">- They can run normally (default)</span></span><br><span class="line"><span class="comment">- They can run reversed with the reverse method</span></span><br><span class="line"><span class="comment">- They can run with the time altered with the Accelerate, AccelDeccel and Speed actions.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">For example, you can simulate a Ping Pong effect running the action normally and</span></span><br><span class="line"><span class="comment">then running it again in Reverse mode.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Example:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">@code</span></span><br><span class="line"><span class="comment">auto action = MoveBy::create(1.0f, Vec2::ONE);</span></span><br><span class="line"><span class="comment">auto pingPongAction = Sequence::create(action, action-&gt;reverse(), nullptr);</span></span><br><span class="line"><span class="comment">@endcode</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">ActionInterval</span> :</span> <span class="keyword">public</span> FiniteTimeAction&#123;......&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bamend</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动作基类Action"><span class="nav-number">1.</span> <span class="nav-text">动作基类Action</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bamend</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true}});</script></body>
+</html>

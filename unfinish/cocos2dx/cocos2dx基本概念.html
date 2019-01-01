@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hehesimida">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="《cocos2d-x游戏开发》初学笔记 导演，场景，层和精灵 导演（Director） 导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行场景（Scene） 一个游戏通常由多个场景构成，包括需要显示的所有游戏元素层（Layer） 概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）精灵（Sprite） 精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="cocos2dx基础概念">
+<meta property="og:url" content="http://yoursite.com/unfinish/cocos2dx/cocos2dx基本概念.html">
+<meta property="og:site_name" content="the shape of bamend">
+<meta property="og:description" content="《cocos2d-x游戏开发》初学笔记 导演，场景，层和精灵 导演（Director） 导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行场景（Scene） 一个游戏通常由多个场景构成，包括需要显示的所有游戏元素层（Layer） 概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）精灵（Sprite） 精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true">
+<meta property="og:image" content="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/sprite.jpg?raw=true">
+<meta property="og:updated_time" content="2019-01-01T13:33:39.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cocos2dx基础概念">
+<meta name="twitter:description" content="《cocos2d-x游戏开发》初学笔记 导演，场景，层和精灵 导演（Director） 导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行场景（Scene） 一个游戏通常由多个场景构成，包括需要显示的所有游戏元素层（Layer） 概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）精灵（Sprite） 精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。">
+<meta name="twitter:image" content="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/unfinish/cocos2dx/cocos2dx基本概念.html">
+
+
+
+
+
+  <title>cocos2dx基础概念 | the shape of bamend</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">the shape of bamend</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">cocos2dx基础概念</h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <p><em>《cocos2d-x游戏开发》初学笔记</em></p>
+<h2 id="导演，场景，层和精灵"><a href="#导演，场景，层和精灵" class="headerlink" title="导演，场景，层和精灵"></a>导演，场景，层和精灵</h2><hr>
+<h3 id="导演（Director）"><a href="#导演（Director）" class="headerlink" title="导演（Director）"></a>导演（Director）</h3><ul>
+<li>导演是控制游戏流程的主要组件，包括创建和处理游戏如何执行<h3 id="场景（Scene）"><a href="#场景（Scene）" class="headerlink" title="场景（Scene）"></a>场景（Scene）</h3></li>
+<li>一个游戏通常由多个场景构成，包括需要显示的所有游戏元素<h3 id="层（Layer）"><a href="#层（Layer）" class="headerlink" title="层（Layer）"></a>层（Layer）</h3></li>
+<li>概要与场景类似，层通常包含屏幕上呈现的具体内容，包括更细致的游戏元素（如精灵等）<h3 id="精灵（Sprite）"><a href="#精灵（Sprite）" class="headerlink" title="精灵（Sprite）"></a>精灵（Sprite）</h3></li>
+<li>精灵是开发的最主要组成部分，带包游戏中一个最小的可见单位。</li>
+</ul>
+<h2 id="cocos2dx的组成对象关系图"><a href="#cocos2dx的组成对象关系图" class="headerlink" title="cocos2dx的组成对象关系图"></a>cocos2dx的组成对象关系图</h2><hr>
+<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/manjor_concept.PNG?raw=true" alt="cocos基本角色"></div></p>
+<div align="left">
+
+<p>由以上分类，cocos2dx将对象分为节点类（Node），导演类（Director），场景类（Scene），层类（Layer）和精灵（Sprite）类</p>
+<h2 id="Node类（Node）"><a href="#Node类（Node）" class="headerlink" title="Node类（Node）"></a>Node类（Node）</h2><hr>
+<p>node类从Ref类公有继承而来，同时也是其他节点的父类，在精灵类（Sprite）头文件有如下定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSprite.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Sprite</span> :</span> <span class="keyword">public</span> Node, <span class="keyword">public</span> TextureProtocol&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在场景类（Scene）头文件中：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCScene.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Scene</span> :</span> <span class="keyword">public</span> Node&#123;....&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在层类（Layer）中<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCLayer.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Layer</span> :</span> <span class="keyword">public</span> Node&#123;......&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>其头文件声明在工程目录cocos2d\cocos\2d\CCNode.h下。一个Node主要功能有：</p>
+<ul>
+<li><p>包含其他节点</p>
+</li>
+<li><p>通过定时器预定消息和使用回调</p>
+</li>
+<li><p>执行动作</p>
+<h3 id="Node类的成员变量如下"><a href="#Node类的成员变量如下" class="headerlink" title="Node类的成员变量如下"></a>Node类的成员变量如下</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCNode.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">Node</span> :</span> <span class="keyword">public</span> Ref</span><br><span class="line">&#123;</span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="keyword">float</span> _rotationX;               <span class="comment">///&lt; 表示节点X轴的水平旋转角度</span></span><br><span class="line">    <span class="keyword">float</span> _rotationY;               <span class="comment">///&lt; 表示节点Y轴的水平旋转角度</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// rotation Z is decomposed in 2 to simulate Skew for Flash animations</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_X;             <span class="comment">///&lt; rotation angle on Z-axis, component X</span></span><br><span class="line">    <span class="keyword">float</span> _rotationZ_Y;             <span class="comment">///&lt; rotation angle on Z-axis, component Y</span></span><br><span class="line">    </span><br><span class="line">    Quaternion _rotationQuat;       <span class="comment">///rotation using quaternion, if _rotationZ_X == _rotationZ_Y, _rotationQuat = RotationZ_X * RotationY * RotationX, else _rotationQuat = RotationY * RotationX</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">float</span> _scaleX;                  <span class="comment">///&lt; scaling factor on x-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleY;                  <span class="comment">///&lt; scaling factor on y-axis</span></span><br><span class="line">    <span class="keyword">float</span> _scaleZ;                  <span class="comment">///&lt; scaling factor on z-axis</span></span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Node类的成员函数"><a href="#Node类的成员函数" class="headerlink" title="Node类的成员函数"></a>Node类的成员函数</h3><blockquote>
+<p>Node的成员函数分为三类，分别是对节点的处理，如何执行动作和使用定时器预定信息，还有其他少数应用功能的函数</p>
+</blockquote>
+<ul>
+<li><p>节点处理函数</p>
+</li>
+<li><p>节点动作</p>
+</li>
+<li><p>定时器</p>
+</li>
+<li><p>其他</p>
+</li>
+</ul>
+<h2 id="导演类（Director）"><a href="#导演类（Director）" class="headerlink" title="导演类（Director）"></a>导演类（Director）</h2><hr>
+<p>导演只有一个，所以Director是一个单例类，通过getInstance()函数获取实例，导演类的功能有以下：</p>
+<ul>
+<li><p>初始化OpenGL环境</p>
+</li>
+<li><p>创建，访问和切换场景，且一个时间点上只能运行一个场景</p>
+</li>
+<li><p>访问Cocos2d-x配置</p>
+</li>
+<li><p>访问视图</p>
+</li>
+<li><p>暂停，恢复和结束游戏</p>
+<h2 id="场景类（Scene）"><a href="#场景类（Scene）" class="headerlink" title="场景类（Scene）"></a>场景类（Scene）</h2></li>
+</ul>
+<hr>
+<p>场景类是层类的容器，按游戏内容分为三类：</p>
+<ul>
+<li><p>展示场景类：提示，游戏介绍，帮助</p>
+</li>
+<li><p>选项类场景：菜单，参数</p>
+</li>
+<li><p>游戏内容场景：游戏内容</p>
+</li>
+</ul>
+<h2 id="层类（Layer）"><a href="#层类（Layer）" class="headerlink" title="层类（Layer）"></a>层类（Layer）</h2><hr>
+<p>允许用户输入</p>
+<h2 id="精灵类（Sprite）"><a href="#精灵类（Sprite）" class="headerlink" title="精灵类（Sprite）"></a>精灵类（Sprite）</h2><hr>
+<p>精灵是游戏中最小可见单位，在游戏中显示为一个图像，该图像被加载入内存时，被处理成未压缩的纹理图像来存储，再次使用时可以直接从内存读取该图像而不用重新加载图像内存，纹理即图像，纹理的宽度和高度必须是2的n次方，纹理相关类如下：</p>
+<ul>
+<li>Texture2D（纹理）：创建OpenGL 2D纹理图像</li>
+<li>TextureCache（纹理缓存）：单例，加载和管理纹理图像</li>
+<li>TextureAtlas（纹理图集）：可以是Texture2D支持的文件类型</li>
+</ul>
+<h3 id="精灵类（Sprite）-1"><a href="#精灵类（Sprite）-1" class="headerlink" title="精灵类（Sprite）"></a>精灵类（Sprite）</h3><p>精灵类不像其他类一样只继承Node，同时继承和派生其他精灵，如下图所示：</p>
+<p><div align="center"><img src="https://github.com/knightjk/knightjk.github.io/blob/hexo/source/images/cocos2dx%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/sprite.jpg?raw=true" alt="精灵类"></div></p>
+<div align="left">
+
+<h3 id="精灵帧类（SpriteFrame）"><a href="#精灵帧类（SpriteFrame）" class="headerlink" title="精灵帧类（SpriteFrame）"></a>精灵帧类（SpriteFrame）</h3><p>精灵帧是通过被其快速更换来实现动态效果，精灵帧类从Ref类直接继承而不从Node类继承，这一点与精灵类不一样：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSpriteFrame.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">SpriteFrame</span> :</span> <span class="keyword">public</span> Ref, <span class="keyword">public</span> Clonable&#123;......&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="精灵帧缓存类（SpriteFrameCache）"><a href="#精灵帧缓存类（SpriteFrameCache）" class="headerlink" title="精灵帧缓存类（SpriteFrameCache）"></a>精灵帧缓存类（SpriteFrameCache）</h3><p>精灵帧缓存类是一个单例类(通过getInstance获取)，也是直接继承自Ref类，所有精灵可共享用于存储精灵帧来提高运行效率。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cocos2d\cocos\2d\CCSpriteFrameCache.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CC_DLL</span> <span class="title">SpriteFrameCache</span> :</span> <span class="keyword">public</span> Ref&#123;......&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="精灵表单类（SpriteBatchNode）"><a href="#精灵表单类（SpriteBatchNode）" class="headerlink" title="精灵表单类（SpriteBatchNode）"></a>精灵表单类（SpriteBatchNode）</h3><p>OpenGL ES将图片绑定Sprite和渲染会大量消耗CPU，每个屏幕上的精灵会导致程序运行越来越卡，通过精灵表单（SpriteBatchNode），使用同一张纹理图片，这样OpenGL ES只需要一次纹理绘制，提高运行速度。<br>精灵表单的限制：</p>
+<ul>
+<li><p>SpriteBatchNode只能接受精灵对象为其子节点</p>
+</li>
+<li><p>所有精灵对象必须使用同一张干净的纹理图片</p>
+<blockquote>
+<p>精灵表单是一张组合成的图片，并且附带有一个图片文件列表记录图片(后缀名为<em>.plist)。通过加载</em>.plist的信息，从组合成的图片里面提取对应的图片区域，就生成对应区域的精灵；精灵表单的制作可用TexturePacker。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="调度器（Schedule）"><a href="#调度器（Schedule）" class="headerlink" title="调度器（Schedule）"></a>调度器（Schedule）</h2><hr>
+</div></div>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bamend</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#导演，场景，层和精灵"><span class="nav-number">1.</span> <span class="nav-text">导演，场景，层和精灵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导演（Director）"><span class="nav-number">1.1.</span> <span class="nav-text">导演（Director）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景（Scene）"><span class="nav-number">1.2.</span> <span class="nav-text">场景（Scene）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层（Layer）"><span class="nav-number">1.3.</span> <span class="nav-text">层（Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精灵（Sprite）"><span class="nav-number">1.4.</span> <span class="nav-text">精灵（Sprite）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cocos2dx的组成对象关系图"><span class="nav-number">2.</span> <span class="nav-text">cocos2dx的组成对象关系图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node类（Node）"><span class="nav-number">3.</span> <span class="nav-text">Node类（Node）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node类的成员变量如下"><span class="nav-number">3.1.</span> <span class="nav-text">Node类的成员变量如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node类的成员函数"><span class="nav-number">3.2.</span> <span class="nav-text">Node类的成员函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导演类（Director）"><span class="nav-number">4.</span> <span class="nav-text">导演类（Director）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景类（Scene）"><span class="nav-number">5.</span> <span class="nav-text">场景类（Scene）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层类（Layer）"><span class="nav-number">6.</span> <span class="nav-text">层类（Layer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精灵类（Sprite）"><span class="nav-number">7.</span> <span class="nav-text">精灵类（Sprite）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#精灵类（Sprite）-1"><span class="nav-number">7.1.</span> <span class="nav-text">精灵类（Sprite）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精灵帧类（SpriteFrame）"><span class="nav-number">7.2.</span> <span class="nav-text">精灵帧类（SpriteFrame）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精灵帧缓存类（SpriteFrameCache）"><span class="nav-number">7.3.</span> <span class="nav-text">精灵帧缓存类（SpriteFrameCache）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#精灵表单类（SpriteBatchNode）"><span class="nav-number">7.4.</span> <span class="nav-text">精灵表单类（SpriteBatchNode）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度器（Schedule）"><span class="nav-number">8.</span> <span class="nav-text">调度器（Schedule）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bamend</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":120,"height":240},"mobile":{"show":true}});</script></body>
+</html>
