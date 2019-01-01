@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: balabala的事记
+title: the shape of bamend
 subtitle:
 description:
 keywords:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-material
+theme: hexo-theme-next
 stylus:
   compress: true
 
@@ -83,3 +83,20 @@ deploy:
   type: git
   repo: git@github.com:knightjk/knightjk.github.io.git
   branch: master
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  log: false
+  model:
+    use: live2d-widget-model-z16
+  display:
+    position: right
+    width: 120
+    height: 240
+  mobile:
+    show: true
