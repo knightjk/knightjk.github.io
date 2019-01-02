@@ -740,7 +740,7 @@
 		  owner: 'knightjk',
 		  admin: ['knightjk'], 
 		  labels: ''.split(',').filter(l => l),
-		  id: md5(location.href),
+		  id: md5(location.pathname),
 		  distractionFreeMode: 'true'
 		})
 		gitalk.render('gitalk-container')           
