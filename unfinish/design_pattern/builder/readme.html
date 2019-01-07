@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/cocos_white.PNG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cocos_2.PNG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cocos_2.PNG?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/cocos_2.PNG?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hehesimida">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="建造者模式生产主机的组装机器（简称组装器）的订单主机包括主板(a)，内存(b)，CPU(c)，显卡(d)，硬盘(e)。不同品牌的主机的组装顺序和组装内容不一样。比如HP组装内容包括a~e，其组装过程是a-&amp;gt;b-&amp;gt;c-&amp;gt;d-&amp;gt;e，然而DELL组装内容也包括a~e，但其组装顺序不一样：a-&amp;gt;c-&amp;gt;e-&amp;gt;d-&amp;gt;b，还有一些主机是集成显卡和CPU，其组装内容">
+<meta property="og:type" content="website">
+<meta property="og:title" content="the shape of lonely">
+<meta property="og:url" content="http://yoursite.com/unfinish/design_pattern/builder/readme.html">
+<meta property="og:site_name" content="the shape of lonely">
+<meta property="og:description" content="建造者模式生产主机的组装机器（简称组装器）的订单主机包括主板(a)，内存(b)，CPU(c)，显卡(d)，硬盘(e)。不同品牌的主机的组装顺序和组装内容不一样。比如HP组装内容包括a~e，其组装过程是a-&amp;gt;b-&amp;gt;c-&amp;gt;d-&amp;gt;e，然而DELL组装内容也包括a~e，但其组装顺序不一样：a-&amp;gt;c-&amp;gt;e-&amp;gt;d-&amp;gt;b，还有一些主机是集成显卡和CPU，其组装内容">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/unfinish/design_pattern/builder/builder.png">
+<meta property="og:image" content="http://yoursite.com/unfinish/design_pattern/builder/AssemblerBuilder.png">
+<meta property="og:image" content="http://yoursite.com/unfinish/design_pattern/builder/AssemblerBuilder_Director.png">
+<meta property="og:updated_time" content="2019-01-06T09:26:45.882Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="the shape of lonely">
+<meta name="twitter:description" content="建造者模式生产主机的组装机器（简称组装器）的订单主机包括主板(a)，内存(b)，CPU(c)，显卡(d)，硬盘(e)。不同品牌的主机的组装顺序和组装内容不一样。比如HP组装内容包括a~e，其组装过程是a-&amp;gt;b-&amp;gt;c-&amp;gt;d-&amp;gt;e，然而DELL组装内容也包括a~e，但其组装顺序不一样：a-&amp;gt;c-&amp;gt;e-&amp;gt;d-&amp;gt;b，还有一些主机是集成显卡和CPU，其组装内容">
+<meta name="twitter:image" content="http://yoursite.com/unfinish/design_pattern/builder/builder.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/unfinish/design_pattern/builder/readme.html">
+
+
+
+
+
+  <title> | the shape of lonely</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">the shape of lonely</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><h3 id="生产主机的组装机器（简称组装器）的订单"><a href="#生产主机的组装机器（简称组装器）的订单" class="headerlink" title="生产主机的组装机器（简称组装器）的订单"></a>生产主机的组装机器（简称组装器）的订单</h3><p>主机包括主板(a)，内存(b)，CPU(c)，显卡(d)，硬盘(e)。不同品牌的主机的组装顺序和组装内容不一样。比如HP组装内容包括a~e，其组装过程是a-&gt;b-&gt;c-&gt;d-&gt;e，然而DELL组装内容也包括a~e，但其组装顺序不一样：a-&gt;c-&gt;e-&gt;d-&gt;b，还有一些主机是集成显卡和CPU，其组装内容有a，b，e，组装顺序是a-&gt;e-&gt;b。<br></p>
+<p>如果HP生产客户需要购买能够生产HP台式主机的组装机器，且不同子系列的组装顺序和内容有可能有变化，从这个需求上来说，组装执行这一功能的需求固定不变（就是要组装），组装方法会改变，这样就需要把产生组装顺序的行为与组装顺序的执行分离开来。</p>
+<p>为了分离这一过程，需要一个角色来继续组装顺序的操作，我们把这个能够产生组装器的人称为组装器建造师（AssemblerBuilder），他们会自己按不同厂商主机。调配好主机组装器的动作顺序，然后产生不同的主机组装器。然后根据Leader的要求给出自己的已经调配好了的组装器。然后Leader的提供给客户去生产。而如果Leader是作为Director角色的话,AssemblerBuilder也可以只提供组装接口给Director组装.</p>
+<p>就像这种有各种准备好的分立的动作行为（如组装CPU，主板这些行为），然后根据不同需求来各自调用不同的顺序算法的过程,或者说已有调用算法框架,但内部细节实现会被不同需求而改变的情况，都可以将其行为和方法分立，然后不同的顺序算法各自产生一个具体实体，提供给上层获取的实体接口。这样一来，不同组合相对独立，可增可减。其基本的构造UML如下图所示：</p>
+<p><img src="./builder.png" alt="builder"></p>
+<p>其中不同顺序变化就只要增加ConcreteBuilder的构造就行了，然后在Leader里面对应给出Concrete的获取就行。</p>
+<p>那么，对于这个主机组装器的实际生产会是怎样的呢？如下图所示：<br><img src="./AssemblerBuilder.png" alt="AssemblerBuilder"></p>
+<p>好了,可以开始编码实现了..</p>
+<p>在实现中发现如果这部分装配动作完全由AssemblerBuilder实现的话,如果AssemblerBuilder的使用性只是一时的,比如这次只生产一次HP主机,以后不生产这类主机了,这样的话增加的AssemblerBuilder类最后有可能太多了,太多的话就需要去掉.如果是这样的有”只是临时性”的需求,不如请一个director来收集需求来自己拼接客户所要的流程,那么更改过后的UML如下图所示:<br><img src="./AssemblerBuilder_Director.png" alt="AssemblerBuilder_Director"></p>
+<p>另外的实例可以参考<a href="http://www.runoob.com/design-pattern/builder-pattern.html" target="_blank" rel="noopener">http://www.runoob.com/design-pattern/builder-pattern.html</a></p>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bamend</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建造者模式"><span class="nav-number">1.</span> <span class="nav-text">建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产主机的组装机器（简称组装器）的订单"><span class="nav-number">1.0.1.</span> <span class="nav-text">生产主机的组装机器（简称组装器）的订单</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bamend</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> visitors
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> total volume
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '4067b86975b4cc5dc7c1',
+		  clientSecret: '4ded950237bab21675b80e7149466b4107dc6ced',
+		  repo: 'knightjk.github.io',
+		  owner: 'knightjk',
+		  admin: ['knightjk'], 
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":false}});</script></body>
+</html>
