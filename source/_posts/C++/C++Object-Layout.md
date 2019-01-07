@@ -1,5 +1,8 @@
 ---
 title: C++对象在空间中的布局
+archives : 技术探索
+categories : C++
+date: 2018-11-20
 ---
 
 ## C++空类空间

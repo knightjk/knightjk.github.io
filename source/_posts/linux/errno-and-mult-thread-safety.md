@@ -1,5 +1,8 @@
 ---
 title: errno与多线程变量安全
+archives : 技术探索
+categories : unix
+date: 2018-12-17
 ---
 
 ## errno作用
