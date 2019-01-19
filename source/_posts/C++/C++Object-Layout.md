@@ -2,6 +2,8 @@
 title: C++对象在空间中的布局
 archives : 技术探索
 categories : C++
+tags: 
+    - 技术探索
 date: 2018-11-20
 ---
 

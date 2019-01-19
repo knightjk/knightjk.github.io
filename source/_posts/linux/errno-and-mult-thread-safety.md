@@ -2,6 +2,8 @@
 title: errno与多线程变量安全
 archives : 技术探索
 categories : unix
+tags: 
+    - 技术探索
 date: 2018-12-17
 ---
 
