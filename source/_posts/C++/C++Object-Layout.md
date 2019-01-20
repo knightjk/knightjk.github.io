@@ -672,7 +672,7 @@ $20 = (long *) 0x0
 
 >   由此，可以得出CVDriveD1对象的虚函数表结构图~~图图图！~~
 
-
+>   当然，如果孙子类CVDriveD1没有实现父类和祖先类共有的抽象函数的定义是不行的。也就是说，菱形继承的两个父类CVDrive1B1和CVDrive1B2实现基类CBase1的抽象函数vfunc1，但孙子类CVDriveD1却没有实现对vfunc1，这样导致编译器无法识别CVDriveD1对象在使用vfunc1函数时使用的到底是哪个父类的函数（臣妾做不到啊）
 
 ## 多态作为参数的限制
 <p style="text-indent:2em">
