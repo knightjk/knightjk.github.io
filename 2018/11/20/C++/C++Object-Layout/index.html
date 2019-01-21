@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="the shape of lonely">
 <meta property="og:description" content="C++空类空间  C中的struct空结构体 12struct SEmpty&amp;#123;&amp;#125;;             //size of SEmpty is 0;struct SEmpty sEmpty;         //size of sEmpty is 0;  C++中的class与struct空类 12class CEmpty&amp;#123;&amp;#125;;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-19T14:57:41.846Z">
+<meta property="og:updated_time" content="2019-01-20T07:59:47.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++对象在空间中的布局">
 <meta name="twitter:description" content="C++空类空间  C中的struct空结构体 12struct SEmpty&amp;#123;&amp;#125;;             //size of SEmpty is 0;struct SEmpty sEmpty;         //size of sEmpty is 0;  C++中的class与struct空类 12class CEmpty&amp;#123;&amp;#125;;">
@@ -593,6 +593,9 @@
 </blockquote>
 <blockquote>
 <p>  由此，可以得出CVDriveD1对象的虚函数表结构图<del>图图图！</del></p>
+</blockquote>
+<blockquote>
+<p>  当然，如果孙子类CVDriveD1没有实现父类和祖先类共有的抽象函数的定义是不行的。也就是说，菱形继承的两个父类CVDrive1B1和CVDrive1B2实现基类CBase1的抽象函数vfunc1，但孙子类CVDriveD1却没有实现对vfunc1，这样导致编译器无法识别CVDriveD1对象在使用vfunc1函数时使用的到底是哪个父类的函数（臣妾做不到啊）</p>
 </blockquote>
 <h2 id="多态作为参数的限制"><a href="#多态作为参数的限制" class="headerlink" title="多态作为参数的限制"></a>多态作为参数的限制</h2><p style="text-indent:2em"><br>    在非指针的情况下，子类对父类变量的数据复制往往会发生截断，但类中的函数并不占空间，那么在子类对父类变量的复制过程中父类如何选择使用函数。<br></p>
 
